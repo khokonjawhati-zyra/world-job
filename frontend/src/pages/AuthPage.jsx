@@ -191,7 +191,17 @@ const AuthPage = () => {
                             <label>
                                 <input type="checkbox" /> Remember Me
                             </label>
-                            {isLogin && <span onClick={() => setIsForgot(true)} style={{ cursor: 'pointer', color: 'var(--neon-magenta)' }}>Forgot Password?</span>}
+                            {isLogin && (
+                                <span
+                                    onClick={() => {
+                                        console.log("Forgot Password clicked");
+                                        setIsForgot(true);
+                                    }}
+                                    style={{ cursor: 'pointer', color: 'var(--neon-magenta)', textDecoration: 'underline' }}
+                                >
+                                    Forgot Password?
+                                </span>
+                            )}
                         </div>
                     )}
 
@@ -243,8 +253,8 @@ const AuthPage = () => {
                         <button style={{ padding: '10px', flex: 1, borderRadius: '8px', border: '1px solid #333', background: '#3b5998', color: '#fff', cursor: 'pointer' }}>Facebook</button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

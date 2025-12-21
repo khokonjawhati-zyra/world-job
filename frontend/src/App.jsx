@@ -31,6 +31,7 @@ function App() {
             : <LandingPage />
         } />
         <Route path="/login" element={<AuthPage />} />
+        <Route path="/auth" element={<AuthPage />} />
 
         {/* User Dashboards (Public for Demo/Dev Access) */}
         <Route path="/worker" element={<WorkerDashboard />} />
