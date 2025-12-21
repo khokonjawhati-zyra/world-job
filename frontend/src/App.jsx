@@ -21,6 +21,7 @@ import AdminLoginPage from './admin/AdminLoginPage';
 import './index.css';
 
 function App() {
+  console.log("App Version: MobileFix-v2 (Wildcard CORS + SSL Prod URL) - Loaded at " + new Date().toISOString());
   return (
     <Router>
       <Routes>
