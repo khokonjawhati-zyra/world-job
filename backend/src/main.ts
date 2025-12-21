@@ -22,6 +22,8 @@ async function bootstrap() {
       /\.vercel\.app$/ // Wildcard for all other Vercel previews
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: '*',
+    exposedHeaders: '*',
     credentials: true,
   });
   await app.listen(process.env.PORT ?? 3001);
