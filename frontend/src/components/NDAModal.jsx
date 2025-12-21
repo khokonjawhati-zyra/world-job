@@ -10,7 +10,7 @@ const NDAModal = ({ isOpen, onClose, onSign, investorId, userId, projectTitle = 
 
     useEffect(() => {
         if (isOpen) {
-            fetch('http://localhost:3001/investment/legal/templates')
+            fetch('https://world-job-backend.vercel.app/investment/legal/templates')
                 .then(res => res.json())
                 .then(data => {
                     setTerms(data);

@@ -6,7 +6,7 @@ const AiAdminCopilotPanel = () => {
     const [analysis, setAnalysis] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3001/ai-admin/priority-queue')
+        fetch('https://world-job-backend.vercel.app/ai-admin/priority-queue')
             .then(res => res.json())
             .then(data => {
                 setTasks(data);
@@ -21,8 +21,8 @@ const AiAdminCopilotPanel = () => {
     const runAnalysis = (task) => {
         setAnalysis({ loading: true });
         const endpoint = task.type === 'PAYMENT_RELEASE'
-            ? `http://localhost:3001/ai-admin/analyze/payment/${task.id}`
-            : `http://localhost:3001/ai-admin/analyze/dispute/${task.id}`;
+            ? `https://world-job-backend.vercel.app/ai-admin/analyze/payment/${task.id}`
+            : `https://world-job-backend.vercel.app/ai-admin/analyze/dispute/${task.id}`;
 
         fetch(endpoint, { method: 'POST' })
             .then(res => res.json())

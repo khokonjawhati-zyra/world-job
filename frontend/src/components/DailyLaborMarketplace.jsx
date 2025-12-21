@@ -13,9 +13,9 @@ const DailyLaborMarketplace = ({ userId, role }) => {
 
     const fetchJobs = () => {
         setLoading(true);
-        let url = 'http://localhost:3001/labor/jobs';
+        let url = 'https://world-job-backend.vercel.app/labor/jobs';
         if (role === 'employer' && view === 'my-jobs') {
-            url = `http://localhost:3001/labor/jobs/employer/${userId}`;
+            url = `https://world-job-backend.vercel.app/labor/jobs/employer/${userId}`;
         }
 
         fetch(url)
@@ -91,7 +91,7 @@ const PostJobForm = ({ userId, onSuccess }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3001/labor/jobs', {
+        fetch('https://world-job-backend.vercel.app/labor/jobs', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ employerId: userId, data: form })
@@ -139,7 +139,7 @@ const JobCard = ({ job, role, userId, refresh }) => {
     const isFull = job.hiredCount >= job.vacancies;
 
     const handleApply = () => {
-        fetch(`http://localhost:3001/labor/jobs/${job.id}/apply`, {
+        fetch(`https://world-job-backend.vercel.app/labor/jobs/${job.id}/apply`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ workerId: userId })
@@ -147,7 +147,7 @@ const JobCard = ({ job, role, userId, refresh }) => {
     };
 
     const handleHire = (applicantId) => {
-        fetch(`http://localhost:3001/labor/jobs/${job.id}/hire`, {
+        fetch(`https://world-job-backend.vercel.app/labor/jobs/${job.id}/hire`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ workerId: applicantId })
@@ -224,7 +224,7 @@ const AttendanceView = ({ jobId, workerId }) => {
     const [record, setRecord] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3001/labor/attendance/${jobId}`)
+        fetch(`https://world-job-backend.vercel.app/labor/attendance/${jobId}`)
             .then(res => res.json())
             .then(data => {
                 const myRecord = data.find(r => r.workerId === workerId);
@@ -233,7 +233,7 @@ const AttendanceView = ({ jobId, workerId }) => {
     }, [jobId]);
 
     const handleCheckIn = () => {
-        fetch(`http://localhost:3001/labor/attendance/${jobId}/check-in`, {
+        fetch(`https://world-job-backend.vercel.app/labor/attendance/${jobId}/check-in`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ workerId })
@@ -242,7 +242,7 @@ const AttendanceView = ({ jobId, workerId }) => {
 
     const handleCheckOut = () => {
         const proofs = [prompt("Enter proof URL (optional):")];
-        fetch(`http://localhost:3001/labor/attendance/${jobId}/check-out`, {
+        fetch(`https://world-job-backend.vercel.app/labor/attendance/${jobId}/check-out`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ workerId, proofs })
@@ -268,7 +268,7 @@ const AttendanceControl = ({ jobId, workerId }) => {
     const [record, setRecord] = useState(null);
 
     const refresh = () => {
-        fetch(`http://localhost:3001/labor/attendance/${jobId}`)
+        fetch(`https://world-job-backend.vercel.app/labor/attendance/${jobId}`)
             .then(res => res.json())
             .then(data => {
                 const myRecord = data.find(r => r.workerId === workerId);
@@ -279,7 +279,7 @@ const AttendanceControl = ({ jobId, workerId }) => {
     useEffect(() => { refresh(); }, []);
 
     const handleApprove = () => {
-        fetch(`http://localhost:3001/labor/attendance/${jobId}/approve`, {
+        fetch(`https://world-job-backend.vercel.app/labor/attendance/${jobId}/approve`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ workerId })

@@ -21,7 +21,7 @@ const UserProfile = () => {
     const handleSave = () => {
         setIsSaving(true);
 
-        fetch(`http://localhost:3001/profiles/${userId}/update`, {
+        fetch(`https://world-job-backend.vercel.app/profiles/${userId}/update`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...profile, role })
@@ -50,7 +50,7 @@ const UserProfile = () => {
     useEffect(() => {
         setLoading(true);
         // Fetch Real Profile Data
-        fetch(`http://localhost:3001/profiles/${userId}?role=${role}`)
+        fetch(`https://world-job-backend.vercel.app/profiles/${userId}?role=${role}`)
             .then(res => res.json())
             .then(data => {
                 if (data && !data.error) {
@@ -134,8 +134,8 @@ const UserProfile = () => {
         formData.append('role', role);
 
         const endpoint = type === 'image'
-            ? `http://localhost:3001/profiles/${userId}/upload-image`
-            : `http://localhost:3001/profiles/${userId}/upload-document`;
+            ? `https://world-job-backend.vercel.app/profiles/${userId}/upload-image`
+            : `https://world-job-backend.vercel.app/profiles/${userId}/upload-document`;
 
         fetch(endpoint, {
             method: 'POST',
@@ -258,7 +258,7 @@ const UserProfile = () => {
                                         const url = document.getElementById('verify-doc-url').value;
                                         if (!url) return alert("Please enter a URL");
 
-                                        fetch('http://localhost:3001/verification/submit', {
+                                        fetch('https://world-job-backend.vercel.app/verification/submit', {
                                             method: 'POST',
                                             headers: { 'Content-Type': 'application/json' },
                                             body: JSON.stringify({ userId, userType: role.toUpperCase(), type: 'IDENTITY', data: url })

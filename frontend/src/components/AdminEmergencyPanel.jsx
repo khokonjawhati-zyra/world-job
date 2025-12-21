@@ -13,7 +13,7 @@ const AdminEmergencyPanel = () => {
     }, []);
 
     const fetchEmergencies = () => {
-        fetch('http://localhost:3001/emergency/active')
+        fetch('https://world-job-backend.vercel.app/emergency/active')
             .then(res => res.json())
             .then(data => {
                 setEmergencies(data);
@@ -26,14 +26,14 @@ const AdminEmergencyPanel = () => {
     };
 
     const fetchTracking = () => {
-        fetch('http://localhost:3001/emergency/tracking')
+        fetch('https://world-job-backend.vercel.app/emergency/tracking')
             .then(res => res.json())
             .then(data => setTrackingData(data))
             .catch(console.error);
     };
 
     const handleCreateAlert = () => {
-        fetch('http://localhost:3001/emergency/alert', {
+        fetch('https://world-job-backend.vercel.app/emergency/alert', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

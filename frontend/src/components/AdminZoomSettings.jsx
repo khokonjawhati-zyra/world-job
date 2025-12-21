@@ -12,7 +12,7 @@ const AdminZoomSettings = () => {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:3001/zoom/config')
+        fetch('https://world-job-backend.vercel.app/zoom/config')
             .then(res => res.json())
             .then(data => {
                 if (data.accountId) setConfig(data);
@@ -28,7 +28,7 @@ const AdminZoomSettings = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:3001/zoom/config', {
+            const res = await fetch('https://world-job-backend.vercel.app/zoom/config', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(config)

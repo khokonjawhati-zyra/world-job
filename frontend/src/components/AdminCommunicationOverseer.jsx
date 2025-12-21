@@ -10,7 +10,7 @@ const AdminCommunicationOverseer = () => {
 
     useEffect(() => {
         if (!socket) {
-            socket = io('http://localhost:3001');
+            socket = io('https://world-job-backend.vercel.app');
         }
 
         socket.emit('joinAdminOversight');

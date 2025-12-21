@@ -10,8 +10,8 @@ const AdminAnalyticsPanel = () => {
         const fetchAnalytics = async () => {
             try {
                 const [heatmapRes, fraudRes] = await Promise.all([
-                    fetch('http://localhost:3001/analytics/heatmap'),
-                    fetch('http://localhost:3001/analytics/fraud-alerts')
+                    fetch('https://world-job-backend.vercel.app/analytics/heatmap'),
+                    fetch('https://world-job-backend.vercel.app/analytics/fraud-alerts')
                 ]);
 
                 const heatmap = await heatmapRes.json();

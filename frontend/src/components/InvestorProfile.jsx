@@ -21,7 +21,7 @@ const InvestorProfile = ({ investorId }) => {
     const fetchProfile = React.useCallback(() => {
         setLoading(true);
         // Ensure we pass role=investor to find the correct profile type
-        fetch(`http://localhost:3001/profiles/${investorId}?role=investor`)
+        fetch(`https://world-job-backend.vercel.app/profiles/${investorId}?role=investor`)
             .then(res => res.json())
             .then(data => {
                 if (data) {
@@ -60,7 +60,7 @@ const InvestorProfile = ({ investorId }) => {
             role: 'investor' // Required by backend
         };
 
-        fetch(`http://localhost:3001/profiles/${investorId}/update`, {
+        fetch(`https://world-job-backend.vercel.app/profiles/${investorId}/update`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updates)
@@ -87,7 +87,7 @@ const InvestorProfile = ({ investorId }) => {
         formData.append('role', 'investor');
 
         setUploading(true);
-        fetch(`http://localhost:3001/profiles/${investorId}/upload-image`, {
+        fetch(`https://world-job-backend.vercel.app/profiles/${investorId}/upload-image`, {
             method: 'POST',
             body: formData
         })
@@ -117,7 +117,7 @@ const InvestorProfile = ({ investorId }) => {
         formData.append('role', 'investor');
 
         setUploading(true);
-        fetch(`http://localhost:3001/profiles/${investorId}/upload-document`, {
+        fetch(`https://world-job-backend.vercel.app/profiles/${investorId}/upload-document`, {
             method: 'POST',
             body: formData
         })

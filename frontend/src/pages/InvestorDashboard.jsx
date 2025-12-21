@@ -19,7 +19,7 @@ const InvestorDashboard = () => {
 
     const fetchWalletBalance = () => {
         setRefreshing(true);
-        fetch('http://localhost:3001/payment/balance/901')
+        fetch('https://world-job-backend.vercel.app/payment/balance/901')
             .then(res => res.json())
             .then(data => setWalletBalance(data.balance || 0))
             .catch(console.error)

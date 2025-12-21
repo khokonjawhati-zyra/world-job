@@ -7,7 +7,7 @@ const AdminVerificationPanel = () => {
 
     const fetchRequests = () => {
         setLoading(true);
-        fetch('http://localhost:3001/verification/pending')
+        fetch('https://world-job-backend.vercel.app/verification/pending')
             .then(res => res.json())
             .then(data => {
                 setRequests(data);
@@ -24,7 +24,7 @@ const AdminVerificationPanel = () => {
     }, []);
 
     const handleAction = (id, action) => {
-        fetch(`http://localhost:3001/verification/${action}/${id}`, { method: 'POST' })
+        fetch(`https://world-job-backend.vercel.app/verification/${action}/${id}`, { method: 'POST' })
             .then(res => res.json())
             .then(() => {
                 alert(`Request ${action}ed`);

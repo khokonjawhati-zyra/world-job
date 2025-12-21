@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const CurrencyExchangePanel = ({ userId = '201', userRole = 'BUYER' }) => {
-    const API_URL = 'http://localhost:3001';
+    const API_URL = 'https://world-job-backend.vercel.app';
     const [amount, setAmount] = useState(1);
     const [fromCurrency, setFromCurrency] = useState('USD');
     const [toCurrency, setToCurrency] = useState('BDT');

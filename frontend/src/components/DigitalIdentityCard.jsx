@@ -7,7 +7,7 @@ const DigitalIdentityCard = ({ userId }) => {
     useEffect(() => {
         // Use relative path for config or default to localhost if not imported, 
         // but primarily rely on catch block for demo mode.
-        fetch(`http://localhost:3001/identity/${userId}`)
+        fetch(`https://world-job-backend.vercel.app/identity/${userId}`)
             .then(res => res.json())
             .then(data => setIdentity(data))
             .catch(err => {
@@ -29,7 +29,7 @@ const DigitalIdentityCard = ({ userId }) => {
         setVerifying(true);
         // Simulate AI Scan with delay
         setTimeout(() => {
-            fetch('http://localhost:3001/identity/verify', {
+            fetch('https://world-job-backend.vercel.app/identity/verify', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ workerId: userId })

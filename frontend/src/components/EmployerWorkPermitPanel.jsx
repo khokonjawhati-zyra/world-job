@@ -4,7 +4,7 @@ import NDAModal from './NDAModal'; // Assuming NDAModal is in a separate file
 const EmployerWorkPermitPanel = () => {
     // Mock Current User (Buyer)
     const CURRENT_USER_ID = '201'; // Matches backend seed data
-    const API_URL = 'http://localhost:3001';
+    const API_URL = 'https://world-job-backend.vercel.app';
 
     const [permits, setPermits] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ const EmployerWorkPermitPanel = () => {
 
         try {
             // 1. Log the signature (Liability Waiver)
-            const legalRes = await fetch('http://localhost:3001/investment/nda/sign', {
+            const legalRes = await fetch('https://world-job-backend.vercel.app/investment/nda/sign', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

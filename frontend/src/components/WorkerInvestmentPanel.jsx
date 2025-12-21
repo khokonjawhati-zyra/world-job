@@ -23,7 +23,7 @@ const WorkerInvestmentPanel = ({ workerId = "101" }) => {
 
     const fetchProposals = async () => {
         try {
-            const res = await fetch(`http://localhost:3001/investment/worker/${workerId}`);
+            const res = await fetch(`https://world-job-backend.vercel.app/investment/worker/${workerId}`);
             setProposals(await res.json());
         } catch (err) {
             console.error(err);
@@ -35,7 +35,7 @@ const WorkerInvestmentPanel = ({ workerId = "101" }) => {
         setLoading(true);
         try {
 
-            const res = await fetch('http://localhost:3001/investment/proposal', {
+            const res = await fetch('https://world-job-backend.vercel.app/investment/proposal', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...formData, workerId: String(workerId) })

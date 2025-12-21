@@ -8,7 +8,7 @@ const DisputeForm = ({ projectId, onClose }) => {
 
     const handleSubmit = async () => {
         try {
-            await fetch('http://localhost:3001/disputes', {
+            await fetch('https://world-job-backend.vercel.app/disputes', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ projectId, reason, initiatorId: '1' })

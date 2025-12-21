@@ -16,7 +16,7 @@ const FinancialsPanel = ({ userId, role }) => {
     }, [userId]);
 
     const fetchTransactions = () => {
-        fetch(`http://localhost:3001/payment/transactions/${userId}`)
+        fetch(`https://world-job-backend.vercel.app/payment/transactions/${userId}`)
             .then(res => res.json())
             .then(data => {
                 setHistory(data.history || []);
@@ -26,7 +26,7 @@ const FinancialsPanel = ({ userId, role }) => {
     };
 
     const fetchMethods = () => {
-        fetch(`http://localhost:3001/payment/methods/${userId}`)
+        fetch(`https://world-job-backend.vercel.app/payment/methods/${userId}`)
             .then(res => res.json())
             .then(data => {
                 setMethods(data);
@@ -36,7 +36,7 @@ const FinancialsPanel = ({ userId, role }) => {
     };
 
     const fetchGateways = () => {
-        fetch('http://localhost:3001/payment/admin/gateways')
+        fetch('https://world-job-backend.vercel.app/payment/admin/gateways')
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data)) {
@@ -67,7 +67,7 @@ const FinancialsPanel = ({ userId, role }) => {
 
         console.log("Sending Payload:", payload);
 
-        fetch(`http://localhost:3001/payment/methods/${userId}`, {
+        fetch(`https://world-job-backend.vercel.app/payment/methods/${userId}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
@@ -262,7 +262,7 @@ const DepositForm = ({ userId, methods, gateways = [], onSuccess }) => {
     const handleDeposit = () => {
         if (!amount || !methodId) return alert("Select method and amount");
         setLoading(true);
-        fetch('http://localhost:3001/payment/deposit', {
+        fetch('https://world-job-backend.vercel.app/payment/deposit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userId, amount: parseFloat(amount), methodId, currency })
@@ -322,7 +322,7 @@ const WithdrawForm = ({ userId, methods, onSuccess }) => {
     const handleWithdraw = () => {
         if (!amount || !methodId) return alert("Select method and amount");
         setLoading(true);
-        fetch('http://localhost:3001/payment/withdraw', {
+        fetch('https://world-job-backend.vercel.app/payment/withdraw', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userId, amount: parseFloat(amount), methodId, currency: 'USD' })

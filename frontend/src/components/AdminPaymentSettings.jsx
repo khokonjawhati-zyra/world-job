@@ -13,7 +13,7 @@ const AdminPaymentSettings = () => {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:3001/payment-config')
+        fetch('https://world-job-backend.vercel.app/payment-config')
             .then(res => res.json())
             .then(data => {
                 if (data.sslcommerz) setConfig(data);
@@ -35,7 +35,7 @@ const AdminPaymentSettings = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:3001/payment-config', {
+            const res = await fetch('https://world-job-backend.vercel.app/payment-config', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(config)

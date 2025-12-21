@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const WorkerWorkPermitPanel = ({ onBalanceUpdate }) => {
     // Mock Current User (Worker)
     const CURRENT_USER_ID = '101'; // Matches backend seed data
-    const API_URL = 'http://localhost:3001';
+    const API_URL = 'https://world-job-backend.vercel.app';
 
     const [permits, setPermits] = useState([]);
     const [loading, setLoading] = useState(true);

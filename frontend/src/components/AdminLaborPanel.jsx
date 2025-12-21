@@ -13,7 +13,7 @@ const AdminLaborPanel = () => {
 
     const fetchJobs = () => {
         setLoading(true);
-        fetch('http://localhost:3001/labor/jobs')
+        fetch('https://world-job-backend.vercel.app/labor/jobs')
             .then(res => res.json())
             .then(data => {
                 setJobs(data);
@@ -28,7 +28,7 @@ const AdminLaborPanel = () => {
     const viewJobDetails = (job) => {
         setSelectedJob(job);
         // Fetch specific attendance for this job
-        fetch(`http://localhost:3001/labor/attendance/${job.id}`)
+        fetch(`https://world-job-backend.vercel.app/labor/attendance/${job.id}`)
             .then(res => res.json())
             .then(data => setAttendance(data));
     };

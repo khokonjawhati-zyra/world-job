@@ -11,7 +11,7 @@ const AdminSupportPanel = () => {
 
     const fetchTickets = () => {
         setLoading(true);
-        fetch('http://localhost:3001/support')
+        fetch('https://world-job-backend.vercel.app/support')
             .then(res => res.json())
             .then(data => {
                 setTickets(data);
@@ -26,7 +26,7 @@ const AdminSupportPanel = () => {
     const resolveTicket = (id) => {
         if (!window.confirm("Mark this ticket as resolved?")) return;
 
-        fetch(`http://localhost:3001/support/${id}/resolve`, { method: 'PATCH' })
+        fetch(`https://world-job-backend.vercel.app/support/${id}/resolve`, { method: 'PATCH' })
             .then(res => res.json())
             .then(() => {
                 alert("Ticket Resolved!");

@@ -8,7 +8,7 @@ const AdminLegalPanel = () => {
 
     useEffect(() => {
         // Fetch Audit Logs
-        fetch('http://localhost:3001/investment/admin/nda-audit')
+        fetch('https://world-job-backend.vercel.app/investment/admin/nda-audit')
             .then(res => res.json())
             .then(setAuditLogs)
             .catch(err => {
@@ -21,7 +21,7 @@ const AdminLegalPanel = () => {
     }, []);
 
     const fetchTerms = () => {
-        fetch('http://localhost:3001/legal/terms')
+        fetch('https://world-job-backend.vercel.app/legal/terms')
             .then(res => res.json())
             .then(setTerms)
             .catch(console.error);
@@ -29,7 +29,7 @@ const AdminLegalPanel = () => {
 
     const handleAddClause = () => {
         if (!newClause.trim()) return;
-        fetch('http://localhost:3001/legal/clause', {
+        fetch('https://world-job-backend.vercel.app/legal/clause', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ content: newClause })
@@ -43,7 +43,7 @@ const AdminLegalPanel = () => {
 
     const handleRemoveClause = (id) => {
         if (!window.confirm('Delete this clause?')) return;
-        fetch(`http://localhost:3001/legal/clause/${id}`, { method: 'DELETE' })
+        fetch(`https://world-job-backend.vercel.app/legal/clause/${id}`, { method: 'DELETE' })
             .then(res => res.json())
             .then(setTerms)
             .catch(err => alert('Cannot remove mandatory clause'));

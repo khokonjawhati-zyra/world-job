@@ -14,9 +14,9 @@ const AdminPaymentControl = () => {
     const fetchData = () => {
         setLoading(true);
         Promise.all([
-            fetch('http://localhost:3001/projects/admin/pending-releases').then(res => res.json()),
-            fetch('http://localhost:3001/labor/admin/pending-payments').then(res => res.json()),
-            fetch('http://localhost:3001/payment/admin/withdrawals').then(res => res.json())
+            fetch('https://world-job-backend.vercel.app/projects/admin/pending-releases').then(res => res.json()),
+            fetch('https://world-job-backend.vercel.app/labor/admin/pending-payments').then(res => res.json()),
+            fetch('https://world-job-backend.vercel.app/payment/admin/withdrawals').then(res => res.json())
         ]).then(([mArgs, lArgs, wArgs]) => {
             setMilestones(mArgs);
             setLaborPayments(lArgs);
@@ -31,7 +31,7 @@ const AdminPaymentControl = () => {
 
     const handleWithdrawalAction = (id, action) => {
         if (!confirm(`Are you sure you want to ${action.toUpperCase()} this withdrawal?`)) return;
-        fetch(`http://localhost:3001/payment/admin/withdrawal/${id}`, {
+        fetch(`https://world-job-backend.vercel.app/payment/admin/withdrawal/${id}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ action })
@@ -43,7 +43,7 @@ const AdminPaymentControl = () => {
 
     const handleReleaseMilestone = (projectId, milestoneId) => {
         if (!window.confirm("CONFIRM RELEASE? This will transfer funds to the worker.")) return;
-        fetch(`http://localhost:3001/projects/admin/release/${projectId}/${milestoneId}`, { method: 'POST' })
+        fetch(`https://world-job-backend.vercel.app/projects/admin/release/${projectId}/${milestoneId}`, { method: 'POST' })
             .then(res => res.json())
             .then(() => {
                 alert('Funds Released!');
@@ -53,7 +53,7 @@ const AdminPaymentControl = () => {
 
     const handleReleaseLabor = (jobId, workerId) => {
         if (!window.confirm("CONFIRM PAYMENT? This will transfer daily wage to the worker.")) return;
-        fetch(`http://localhost:3001/labor/admin/release-payment/${jobId}/${workerId}`, { method: 'POST' })
+        fetch(`https://world-job-backend.vercel.app/labor/admin/release-payment/${jobId}/${workerId}`, { method: 'POST' })
             .then(res => res.json())
             .then(() => {
                 alert('Payment Released!');

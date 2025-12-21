@@ -47,7 +47,7 @@ const ApplicantSelectionModal = ({ job, onClose, onHire }) => {
             };
             console.log("Sending NDA sign request:", requestBody);
 
-            const legalRes = await fetch('http://localhost:3001/investment/nda/sign', {
+            const legalRes = await fetch('https://world-job-backend.vercel.app/investment/nda/sign', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(requestBody)

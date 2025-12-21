@@ -6,7 +6,7 @@ const AdminTCEditor = () => {
     const [saving, setSaving] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:3001/settings/terms')
+        fetch('https://world-job-backend.vercel.app/settings/terms')
             .then(res => res.json())
             .then(data => {
                 setText(data.text);
@@ -20,7 +20,7 @@ const AdminTCEditor = () => {
 
     const handleSave = () => {
         setSaving(true);
-        fetch('http://localhost:3001/settings/terms', {
+        fetch('https://world-job-backend.vercel.app/settings/terms', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text })

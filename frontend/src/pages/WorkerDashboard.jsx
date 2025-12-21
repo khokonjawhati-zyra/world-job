@@ -34,7 +34,7 @@ const WorkerDashboard = () => {
 
     const fetchWalletBalance = () => {
         setRefreshing(true);
-        const p1 = fetch('http://localhost:3001/payment/balance/101')
+        const p1 = fetch('https://world-job-backend.vercel.app/payment/balance/101')
             .then(res => res.json())
             .then(data => setWalletBalance(data.balance || 0))
             .catch(console.error);
@@ -51,7 +51,7 @@ const WorkerDashboard = () => {
 
     React.useEffect(() => {
         // Quick check for badge in header
-        fetch('http://localhost:3001/verification/status/101')
+        fetch('https://world-job-backend.vercel.app/verification/status/101')
             .then(res => res.json())
             .then(data => setIsVerified(data.isVerified))
             .catch(console.error);
@@ -61,7 +61,7 @@ const WorkerDashboard = () => {
     }, []);
 
     const fetchStats = () => {
-        fetch('http://localhost:3001/payment/transactions/101')
+        fetch('https://world-job-backend.vercel.app/payment/transactions/101')
             .then(res => res.json())
             .then(data => {
                 const history = data.history || [];
@@ -88,7 +88,7 @@ const WorkerDashboard = () => {
 
     React.useEffect(() => {
         // Fetch all open jobs
-        fetch('http://localhost:3001/projects')
+        fetch('https://world-job-backend.vercel.app/projects')
             .then(res => res.json())
             .then(data => {
                 // Filter for pending/active jobs if needed
@@ -102,7 +102,7 @@ const WorkerDashboard = () => {
 
     React.useEffect(() => {
         if (activeSection === 'career') {
-            fetch('http://localhost:3001/profiles/101?role=worker')
+            fetch('https://world-job-backend.vercel.app/profiles/101?role=worker')
                 .then(res => res.json())
                 .then(data => setCareerProfile(data))
                 .catch(err => {
@@ -146,7 +146,7 @@ const WorkerDashboard = () => {
         });
 
         // Call Backend
-        fetch(`http://localhost:3001/projects/${jobId}/apply`, {
+        fetch(`https://world-job-backend.vercel.app/projects/${jobId}/apply`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ workerId: '101' })
@@ -165,7 +165,7 @@ const WorkerDashboard = () => {
             const participants = ['101'];
             if (project.employerId) participants.push(String(project.employerId));
 
-            const res = await fetch('http://localhost:3001/zoom/create-meeting', {
+            const res = await fetch('https://world-job-backend.vercel.app/zoom/create-meeting', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -290,7 +290,7 @@ const WorkerDashboard = () => {
                                         }}
                                         onClick={() => {
                                             if (window.confirm("Use AI to generate a proposal for this job?")) {
-                                                fetch('http://localhost:3001/matching/proposal', {
+                                                fetch('https://world-job-backend.vercel.app/matching/proposal', {
                                                     method: 'POST',
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({ jobId: selectedJob.id, workerId: '101' })
@@ -743,7 +743,7 @@ const MilestoneList = ({ projectId }) => {
         // For now we'll fetch all projects and find the one we want because the projectsService.findAll is available
         // But better is to use a specific endpoint if existing.
         // Let's assume we can fetch the project details from /projects (which returns all)
-        fetch('http://localhost:3001/projects')
+        fetch('https://world-job-backend.vercel.app/projects')
             .then(res => res.json())
             .then(data => {
                 const project = data.find(p => p.id === projectId);
@@ -763,7 +763,7 @@ const MilestoneList = ({ projectId }) => {
     }, [projectId]);
 
     const handleSubmit = (mId) => {
-        fetch(`http://localhost:3001/projects/${projectId}/milestones/${mId}/submit`, { method: 'POST' })
+        fetch(`https://world-job-backend.vercel.app/projects/${projectId}/milestones/${mId}/submit`, { method: 'POST' })
             .then(res => res.json())
             .then(() => {
                 alert('Milestone Submitted!');

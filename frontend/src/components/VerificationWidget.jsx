@@ -10,7 +10,7 @@ const VerificationWidget = ({ userId = '101', userType = 'WORKER' }) => {
     const [uploadMode, setUploadMode] = useState('FILE'); // 'FILE' or 'URL'
     const [showInsurance, setShowInsurance] = useState(false);
 
-    const API_URL = 'http://localhost:3001';
+    const API_URL = 'https://world-job-backend.vercel.app';
 
     useEffect(() => {
         fetchStatus();

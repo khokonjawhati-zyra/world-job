@@ -18,7 +18,7 @@ const AdminUserManagement = () => {
 
     const fetchUsers = () => {
         setLoading(true);
-        fetch('http://localhost:3001/auth/admin/users')
+        fetch('https://world-job-backend.vercel.app/auth/admin/users')
             .then(res => res.json())
             .then(data => {
                 setUsers(data);
@@ -40,7 +40,7 @@ const AdminUserManagement = () => {
             setEditMode(true);
         } else if (action === 'Ban') {
             if (window.confirm(`Are you sure you want to BAN ${user.fullName}?`)) {
-                fetch(`http://localhost:3001/auth/admin/users/${user.userId}/ban`, { method: 'POST' })
+                fetch(`https://world-job-backend.vercel.app/auth/admin/users/${user.userId}/ban`, { method: 'POST' })
                     .then(res => res.json())
                     .then(() => {
                         alert("User Banned Successfully");
@@ -53,7 +53,7 @@ const AdminUserManagement = () => {
 
     const saveChanges = () => {
         if (!selectedUser) return;
-        fetch(`http://localhost:3001/auth/admin/users/${selectedUser.userId}/update`, {
+        fetch(`https://world-job-backend.vercel.app/auth/admin/users/${selectedUser.userId}/update`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)

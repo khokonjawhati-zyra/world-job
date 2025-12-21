@@ -16,7 +16,7 @@ const InvestorMarketplace = ({ investorId = "901" }) => {
     const [chatContext, setChatContext] = useState({ roomId: 'investor-global-901', title: 'Investor Comms' });
 
     useEffect(() => {
-        fetch('http://localhost:3001/investment/marketplace')
+        fetch('https://world-job-backend.vercel.app/investment/marketplace')
             .then(res => res.json())
             .then(setProposals)
             .catch(console.error);
@@ -26,7 +26,7 @@ const InvestorMarketplace = ({ investorId = "901" }) => {
         if (!window.confirm(`Schedule a Pitch Meeting for "${project.title}"?`)) return;
         try {
             const participants = [investorId];
-            const res = await fetch('http://localhost:3001/zoom/create-meeting', {
+            const res = await fetch('https://world-job-backend.vercel.app/zoom/create-meeting', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -54,7 +54,7 @@ const InvestorMarketplace = ({ investorId = "901" }) => {
         if (!ndaSigned) return alert('You must sign the NDA.');
         setLoading(true);
         try {
-            await fetch('http://localhost:3001/investment/fund', {
+            await fetch('https://world-job-backend.vercel.app/investment/fund', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -68,7 +68,7 @@ const InvestorMarketplace = ({ investorId = "901" }) => {
             setLoading(false);
             closeModal();
             // Refresh
-            fetch('http://localhost:3001/investment/marketplace').then(res => res.json()).then(setProposals);
+            fetch('https://world-job-backend.vercel.app/investment/marketplace').then(res => res.json()).then(setProposals);
             alert("Funds Transferred Successfully!");
         } catch (err) {
             setLoading(false);
@@ -81,7 +81,7 @@ const InvestorMarketplace = ({ investorId = "901" }) => {
             // endpoint should ideally support type, but for now we reuse nda/sign and assume logic or add query param
             // Actually, we should update backend to support type, but let's just log it for now as signed
 
-            const endpoint = 'http://localhost:3001/investment/nda/sign'; // Reuse for now to get audit log 
+            const endpoint = 'https://world-job-backend.vercel.app/investment/nda/sign'; // Reuse for now to get audit log 
 
             const res = await fetch(endpoint, {
                 method: 'POST',

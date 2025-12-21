@@ -19,7 +19,7 @@ const GatewayList = () => {
     const [error, setError] = useState(null);
 
     const fetchGateways = () => {
-        fetch('http://localhost:3001/payment/admin/gateways')
+        fetch('https://world-job-backend.vercel.app/payment/admin/gateways')
             .then(res => {
                 if (res.status === 404) throw new Error("Backend endpoint not found. Please restart the backend server.");
                 if (!res.ok) throw new Error("Failed to fetch gateways");
@@ -45,13 +45,13 @@ const GatewayList = () => {
 
     const handleDelete = (id) => {
         if (!confirm('Remove this gateway?')) return;
-        fetch(`http://localhost:3001/payment/admin/gateways/${id}/delete`, { method: 'POST' })
+        fetch(`https://world-job-backend.vercel.app/payment/admin/gateways/${id}/delete`, { method: 'POST' })
             .then(() => fetchGateways());
     };
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch('http://localhost:3001/payment/admin/gateways', {
+            const res = await fetch('https://world-job-backend.vercel.app/payment/admin/gateways', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -151,7 +151,7 @@ const AdminTreasuryPanel = () => {
     const fetchStats = () => {
         setLoading(true);
         // Fetch Stats
-        fetch('http://localhost:3001/payment/admin/treasury')
+        fetch('https://world-job-backend.vercel.app/payment/admin/treasury')
             .then(res => res.json())
             .then(data => {
                 setStats(data);
@@ -163,7 +163,7 @@ const AdminTreasuryPanel = () => {
             });
 
         // Fetch Transactions
-        fetch('http://localhost:3001/payment/admin/transactions')
+        fetch('https://world-job-backend.vercel.app/payment/admin/transactions')
             .then(res => res.json())
             .then(data => setTransactions(data))
             .catch(err => console.error(err));
@@ -184,7 +184,7 @@ const AdminTreasuryPanel = () => {
         const newStatus = !stats.isSystemLocked;
 
         try {
-            const res = await fetch('http://localhost:3001/payment/admin/treasury/lock', {
+            const res = await fetch('https://world-job-backend.vercel.app/payment/admin/treasury/lock', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ locked: newStatus })
@@ -211,13 +211,13 @@ const AdminTreasuryPanel = () => {
         let payload = {};
 
         if (action === 'withdraw') {
-            url = 'http://localhost:3001/payment/admin/treasury/withdraw';
+            url = 'https://world-job-backend.vercel.app/payment/admin/treasury/withdraw';
             payload = { amount: val, currency: 'USD', method: 'Bank Transfer' };
         } else if (action === 'deposit') {
-            url = 'http://localhost:3001/payment/admin/treasury/deposit';
+            url = 'https://world-job-backend.vercel.app/payment/admin/treasury/deposit';
             payload = { amount: val, currency: 'USD', note: reason || 'Manual Deposit' };
         } else if (action === 'adjust') {
-            url = 'http://localhost:3001/payment/admin/balance/adjust';
+            url = 'https://world-job-backend.vercel.app/payment/admin/balance/adjust';
             payload = {
                 userId: targetUser,
                 amount: val,

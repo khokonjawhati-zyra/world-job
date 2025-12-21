@@ -12,7 +12,7 @@ export const NotificationProvider = ({ children, userId, role }) => {
         if (!userId) return;
 
         // Connect to Socket.IO
-        const newSocket = io('http://localhost:3001', {
+        const newSocket = io('https://world-job-backend.vercel.app', {
             query: { userId, role }
         });
 
@@ -38,7 +38,7 @@ export const NotificationProvider = ({ children, userId, role }) => {
     const fetchNotifications = async () => {
         if (!userId) return;
         try {
-            const res = await fetch(`http://localhost:3001/notifications/my?userId=${userId}&role=${role}`);
+            const res = await fetch(`https://world-job-backend.vercel.app/notifications/my?userId=${userId}&role=${role}`);
             const data = await res.json();
             setNotifications(data);
         } catch (e) { console.error("Failed to fetch notifications", e); }
@@ -54,7 +54,7 @@ export const NotificationProvider = ({ children, userId, role }) => {
 
     const markAsRead = async (id) => {
         try {
-            await fetch(`http://localhost:3001/notifications/${id}/read`, {
+            await fetch(`https://world-job-backend.vercel.app/notifications/${id}/read`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId })

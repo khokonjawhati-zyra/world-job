@@ -33,7 +33,7 @@ const EmployerMilestoneView = ({ projectId }) => {
     const [newMilestone, setNewMilestone] = React.useState({ description: '', amount: '' });
 
     const fetchMilestones = () => {
-        fetch('http://localhost:3001/projects')
+        fetch('https://world-job-backend.vercel.app/projects')
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data)) {
@@ -54,7 +54,7 @@ const EmployerMilestoneView = ({ projectId }) => {
     const handleApprove = (mId) => {
         if (!window.confirm("Approve this milestone? Funds will be released to the worker.")) return;
 
-        fetch(`http://localhost:3001/projects/${projectId}/milestones/${mId}/approve`, { method: 'POST' })
+        fetch(`https://world-job-backend.vercel.app/projects/${projectId}/milestones/${mId}/approve`, { method: 'POST' })
             .then(res => res.json())
             .then(() => {
                 alert('Milestone Approved & Paid!');
@@ -66,7 +66,7 @@ const EmployerMilestoneView = ({ projectId }) => {
     const handleAddMilestone = () => {
         if (!newMilestone.description || !newMilestone.amount) return;
 
-        fetch(`http://localhost:3001/projects/${projectId}/milestones`, {
+        fetch(`https://world-job-backend.vercel.app/projects/${projectId}/milestones`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -254,7 +254,7 @@ const EmployerDashboard = () => {
 
     const fetchWalletBalance = () => {
         setRefreshing(true);
-        fetch('http://localhost:3001/payment/balance/201')
+        fetch('https://world-job-backend.vercel.app/payment/balance/201')
             .then(res => res.json())
             .then(data => setWalletBalance(data.balance || 0))
             .catch(console.error)
@@ -266,7 +266,7 @@ const EmployerDashboard = () => {
     }, []);
 
     const fetchJobs = () => {
-        fetch('http://localhost:3001/projects')
+        fetch('https://world-job-backend.vercel.app/projects')
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data)) {
@@ -290,7 +290,7 @@ const EmployerDashboard = () => {
     };
 
     React.useEffect(() => {
-        fetch('http://localhost:3001/verification/status/201')
+        fetch('https://world-job-backend.vercel.app/verification/status/201')
             .then(res => res.json())
             .then(data => setIsVerified(data.isVerified))
             .catch(console.error);
@@ -313,7 +313,7 @@ const EmployerDashboard = () => {
         if (!window.confirm(`Schedule a Zoom meeting for "${project.title}"?`)) return;
         try {
             const participants = ['201'];
-            const res = await fetch('http://localhost:3001/zoom/create-meeting', {
+            const res = await fetch('https://world-job-backend.vercel.app/zoom/create-meeting', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -348,8 +348,8 @@ const EmployerDashboard = () => {
         };
 
         const url = editingJob
-            ? `http://localhost:3001/projects/${editingJob.id}/update`
-            : `http://localhost:3001/projects`;
+            ? `https://world-job-backend.vercel.app/projects/${editingJob.id}/update`
+            : `https://world-job-backend.vercel.app/projects`;
 
         fetch(url, {
             method: 'POST', // Both create and update use POST in this setup
@@ -377,7 +377,7 @@ const EmployerDashboard = () => {
                 currency: 'USD',
             };
 
-            const res = await fetch('http://localhost:3001/work-permit/create', {
+            const res = await fetch('https://world-job-backend.vercel.app/work-permit/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -391,7 +391,7 @@ const EmployerDashboard = () => {
             const permit = await res.json();
 
             if (showHireModal.title) {
-                await fetch(`http://localhost:3001/work-permit/${permit.id}/details`, {
+                await fetch(`https://world-job-backend.vercel.app/work-permit/${permit.id}/details`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

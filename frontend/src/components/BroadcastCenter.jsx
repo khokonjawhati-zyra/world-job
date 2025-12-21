@@ -8,7 +8,7 @@ const BroadcastCenter = () => {
         if (!form.title || !form.content) return alert('Please fill in title and content');
 
         try {
-            await fetch('http://localhost:3001/notifications/broadcast', {
+            await fetch('https://world-job-backend.vercel.app/notifications/broadcast', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form)

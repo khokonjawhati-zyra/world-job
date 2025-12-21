@@ -13,7 +13,7 @@ const AdminPlanManager = () => {
     }, []);
 
     const fetchPlans = () => {
-        fetch('http://localhost:3001/monetization/all-plans')
+        fetch('https://world-job-backend.vercel.app/monetization/all-plans')
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data)) setPlans(data);
@@ -28,7 +28,7 @@ const AdminPlanManager = () => {
             features: createForm.features.split(',').map(f => f.trim()) // simple comma separation
         };
 
-        fetch('http://localhost:3001/monetization/create-plan', {
+        fetch('https://world-job-backend.vercel.app/monetization/create-plan', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newPlan)
@@ -50,7 +50,7 @@ const AdminPlanManager = () => {
     };
 
     const handleSave = () => {
-        fetch(`http://localhost:3001/monetization/plans/${editingId}?id=${editingId}`, {
+        fetch(`https://world-job-backend.vercel.app/monetization/plans/${editingId}?id=${editingId}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(editForm)
