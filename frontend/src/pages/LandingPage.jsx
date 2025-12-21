@@ -158,7 +158,7 @@ const LandingPage = () => {
 
     useEffect(() => {
         // Fetch SEO Metadata from Backend
-        fetch('http://localhost:3000/metadata/landing')
+        fetch('https://world-job-backend.vercel.app/metadata/landing')
             .then(res => res.json())
             .then(meta => {
                 document.title = meta.title;
