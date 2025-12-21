@@ -13,9 +13,16 @@ async function bootstrap() {
   // });
 
   app.enableCors({
-    origin: '*', // Allow ALL origins (Mobile, WebViews, Custom Domains)
+    origin: [
+      'https://world-job-seven.vercel.app',
+      'https://world-job-admin-portal.vercel.app',
+      'https://world-job-market.vercel.app',
+      'http://localhost:5173',
+      'http://localhost:3000',
+      /\.vercel\.app$/ // Wildcard for all other Vercel previews
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    credentials: false, // Disable cookies since we use LocalStorage/JWT
+    credentials: true,
   });
   await app.listen(process.env.PORT ?? 3001);
   console.log(`Application is running on: ${await app.getUrl()}`);
