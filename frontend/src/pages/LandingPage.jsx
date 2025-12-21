@@ -228,35 +228,47 @@ const LandingPage = () => {
                 transition={{ delay: 1, duration: 0.5 }}
                 style={{ marginTop: '40px' }}
             >
-                <div className="role-card worker-card" style={{ cursor: 'default' }}>
+                <div
+                    className="role-card worker-card"
+                    onClick={() => navigate('/worker-dashboard')}
+                    style={{ cursor: 'pointer' }}
+                >
                     <div className="card-content">
                         <h2>Worker</h2>
                         <p>Find Jobs & Projects</p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '20px', justifyContent: 'center', position: 'relative', zIndex: 9999 }}>
-                            <button onClick={() => navigate('/worker')} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
-                            <button onClick={() => navigate('/auth', { state: { mode: 'signup', role: 'WORKER' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
+                            <button onClick={(e) => { e.stopPropagation(); navigate('/worker-dashboard'); }} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
+                            <button onClick={(e) => { e.stopPropagation(); navigate('/auth', { state: { mode: 'signup', role: 'WORKER' } }); }} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
                         </div>
                     </div>
                 </div>
 
-                <div className="role-card employer-card" style={{ cursor: 'default' }}>
+                <div
+                    className="role-card employer-card"
+                    onClick={() => navigate('/buyer-dashboard')}
+                    style={{ cursor: 'pointer' }}
+                >
                     <div className="card-content">
                         <h2>Employer</h2>
                         <p>Hire Top Talent</p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '20px', justifyContent: 'center', position: 'relative', zIndex: 9999 }}>
-                            <button onClick={() => navigate('/buyer')} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
-                            <button onClick={() => navigate('/auth', { state: { mode: 'signup', role: 'EMPLOYER' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
+                            <button onClick={(e) => { e.stopPropagation(); navigate('/buyer-dashboard'); }} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
+                            <button onClick={(e) => { e.stopPropagation(); navigate('/auth', { state: { mode: 'signup', role: 'EMPLOYER' } }); }} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
                         </div>
                     </div>
                 </div>
 
-                <div className="role-card investor-card" style={{ cursor: 'default' }}>
+                <div
+                    className="role-card investor-card"
+                    onClick={() => navigate('/investor-dashboard')}
+                    style={{ cursor: 'pointer' }}
+                >
                     <div className="card-content">
                         <h2>Investor</h2>
                         <p>Fund Projects & Earn</p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '20px', justifyContent: 'center', position: 'relative', zIndex: 9999 }}>
-                            <button onClick={() => navigate('/investor')} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
-                            <button onClick={() => navigate('/auth', { state: { mode: 'signup', role: 'INVESTOR' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
+                            <button onClick={(e) => { e.stopPropagation(); navigate('/investor-dashboard'); }} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
+                            <button onClick={(e) => { e.stopPropagation(); navigate('/auth', { state: { mode: 'signup', role: 'INVESTOR' } }); }} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
                         </div>
                     </div>
                 </div>
