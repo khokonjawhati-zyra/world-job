@@ -18,7 +18,6 @@ export class AuthController {
     const user = await this.authService.validateUser(
       loginDto.email,
       loginDto.password,
-      loginDto.role,
     );
     if (!user) {
       throw new Error('Invalid credentials');

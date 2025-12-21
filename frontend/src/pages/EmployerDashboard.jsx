@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
@@ -15,7 +14,6 @@ import GovernmentEnterprisePortal from '../components/GovernmentEnterprisePortal
 import EmployerEmergencyPanel from '../components/EmployerEmergencyPanel';
 import EmployerWorkPermitPanel from '../components/EmployerWorkPermitPanel';
 import JobPostTemplate from '../components/JobPostTemplate';
-// import { AdWidget, SubscriptionPlans } from '../components/MonetizationComponents';
 import ReferralDashboard from '../components/ReferralDashboard';
 import ApplicantSelectionModal from '../components/ApplicantSelectionModal';
 import UniversalChat from '../components/UniversalChat';
@@ -24,6 +22,27 @@ import Footer from '../components/Footer';
 import { NotificationProvider } from '../context/NotificationContext';
 import NotificationBanner from '../components/NotificationBanner';
 import NotificationBell from '../components/NotificationBell';
+
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+    }
+    static getDerivedStateFromError(error) { return { hasError: true, error }; }
+    componentDidCatch(error, errorInfo) { console.error("Uncaught error:", error, errorInfo); }
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div style={{ padding: '20px', color: 'red', textAlign: 'center', marginTop: '50px' }}>
+                    <h1>⚠️ Something went wrong in Employer Dashboard.</h1>
+                    <p>{this.state.error && this.state.error.toString()}</p>
+                    <button onClick={() => window.location.reload()} style={{ padding: '10px 20px', cursor: 'pointer' }}>Reload Page</button>
+                </div>
+            );
+        }
+        return this.props.children;
+    }
+}
 
 // Helper Component for Employer Milestone Management
 const EmployerMilestoneView = ({ projectId }) => {
@@ -516,71 +535,73 @@ const EmployerDashboard = () => {
     };
 
     return (
-        <NotificationProvider userId="201" role="employer">
-            <div className="container" style={{ paddingTop: '80px' }}>
-                <NotificationBanner />
-                <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                        <Logo size="2.5rem" />
-                        <span className="text-gradient" style={{ fontSize: '1.5rem', borderLeft: '1px solid #333', paddingLeft: '20px', '--neon-pink': 'var(--neon-cyan)', '--neon-purple': 'var(--neon-lime)' }}>Employer Panel</span>
-                        {isVerified && <span style={{ marginLeft: '15px', fontSize: '0.8rem', background: 'rgba(0,255,0,0.1)', border: '1px solid var(--neon-lime)', color: 'var(--neon-lime)', padding: '4px 10px', borderRadius: '20px' }}>🛡️ VERIFIED</span>}
-                    </div>
-                    <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-                        <div className="glass-panel" style={{ padding: '8px 15px', borderRadius: '50px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                            <span style={{ fontSize: '0.9rem', color: 'var(--neon-cyan)' }}>${walletBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
-                            <button
-                                onClick={fetchWalletBalance}
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    color: 'var(--neon-cyan)',
-                                    cursor: 'pointer',
-                                    fontSize: '1rem',
-                                    transition: 'transform 0.5s ease',
-                                    transform: refreshing ? 'rotate(360deg)' : 'none'
-                                }}
-                                title="Refresh Balance"
-                            >
-                                ↻
-                            </button>
+        <ErrorBoundary>
+            <NotificationProvider userId="201" role="employer">
+                <div className="container" style={{ paddingTop: '80px' }}>
+                    <NotificationBanner />
+                    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                            <Logo size="2.5rem" />
+                            <span className="text-gradient" style={{ fontSize: '1.5rem', borderLeft: '1px solid #333', paddingLeft: '20px', '--neon-pink': 'var(--neon-cyan)', '--neon-purple': 'var(--neon-lime)' }}>Employer Panel</span>
+                            {isVerified && <span style={{ marginLeft: '15px', fontSize: '0.8rem', background: 'rgba(0,255,0,0.1)', border: '1px solid var(--neon-lime)', color: 'var(--neon-lime)', padding: '4px 10px', borderRadius: '20px' }}>🛡️ VERIFIED</span>}
                         </div>
-                        <button onClick={() => { setEditingJob(null); setActiveSection('post-job'); }} className="btn-neon" style={{ padding: '8px 20px', fontSize: '0.9rem', cursor: 'pointer' }}>Post a Job</button>
-                        <div className="glass-panel" style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--neon-cyan)' }}></div>
-                        <NotificationBell />
+                        <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                            <div className="glass-panel" style={{ padding: '8px 15px', borderRadius: '50px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <span style={{ fontSize: '0.9rem', color: 'var(--neon-cyan)' }}>${walletBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+                                <button
+                                    onClick={fetchWalletBalance}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        color: 'var(--neon-cyan)',
+                                        cursor: 'pointer',
+                                        fontSize: '1rem',
+                                        transition: 'transform 0.5s ease',
+                                        transform: refreshing ? 'rotate(360deg)' : 'none'
+                                    }}
+                                    title="Refresh Balance"
+                                >
+                                    ↻
+                                </button>
+                            </div>
+                            <button onClick={() => { setEditingJob(null); setActiveSection('post-job'); }} className="btn-neon" style={{ padding: '8px 20px', fontSize: '0.9rem', cursor: 'pointer' }}>Post a Job</button>
+                            <div className="glass-panel" style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--neon-cyan)' }}></div>
+                            <NotificationBell />
+                        </div>
+                    </header>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '30px' }}>
+                        <aside className="glass-panel" style={{ height: '600px', borderRadius: '20px', padding: '20px' }}>
+                            <nav style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('manage-jobs'); }} style={{ color: activeSection === 'manage-jobs' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Manage Jobs</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('work-permits'); }} style={{ color: activeSection === 'work-permits' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Work Permits (Approvals)</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('talent-search'); }} style={{ color: activeSection === 'talent-search' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Talent Search</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('daily-labor'); }} style={{ color: activeSection === 'daily-labor' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Daily Labor (Offline)</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('emergency'); }} style={{ color: activeSection === 'emergency' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>🚨 Emergency Response</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('worker-requests'); }} style={{ color: activeSection === 'worker-requests' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Worker Requests</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('financials'); }} style={{ color: activeSection === 'financials' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Financials & Wallet</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('referral'); }} style={{ color: activeSection === 'referral' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>🎁 Refer & Earn</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('time-logs'); }} style={{ color: activeSection === 'time-logs' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Time Logs</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('verification'); }} style={{ color: activeSection === 'verification' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Get Verified {isVerified && '✅'}</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('profile'); }} style={{ color: activeSection === 'profile' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Company Profile</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('enterprise-gov'); }} style={{ color: activeSection === 'enterprise-gov' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Enterprise & Gov</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('security'); }} style={{ color: activeSection === 'security' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>🛡️ Security Center</a>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setShowSupport(true); }} style={{ color: '#aaa', transition: 'color 0.3s' }}>Support</a>
+                                <Link to="/" style={{ marginTop: 'auto', color: 'var(--text-muted)' }}>Logout</Link>
+                            </nav>
+                        </aside>
+
+                        <main style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                            {renderContent()}
+                            <Footer />
+                        </main>
                     </div>
-                </header>
-
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '30px' }}>
-                    <aside className="glass-panel" style={{ height: '600px', borderRadius: '20px', padding: '20px' }}>
-                        <nav style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('manage-jobs'); }} style={{ color: activeSection === 'manage-jobs' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Manage Jobs</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('work-permits'); }} style={{ color: activeSection === 'work-permits' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Work Permits (Approvals)</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('talent-search'); }} style={{ color: activeSection === 'talent-search' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Talent Search</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('daily-labor'); }} style={{ color: activeSection === 'daily-labor' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Daily Labor (Offline)</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('emergency'); }} style={{ color: activeSection === 'emergency' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>🚨 Emergency Response</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('worker-requests'); }} style={{ color: activeSection === 'worker-requests' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Worker Requests</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('financials'); }} style={{ color: activeSection === 'financials' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Financials & Wallet</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('referral'); }} style={{ color: activeSection === 'referral' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>🎁 Refer & Earn</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('time-logs'); }} style={{ color: activeSection === 'time-logs' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Time Logs</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('verification'); }} style={{ color: activeSection === 'verification' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Get Verified {isVerified && '✅'}</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('profile'); }} style={{ color: activeSection === 'profile' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Company Profile</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('enterprise-gov'); }} style={{ color: activeSection === 'enterprise-gov' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>Enterprise & Gov</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setActiveSection('security'); }} style={{ color: activeSection === 'security' ? 'var(--neon-cyan)' : 'var(--text-muted)' }}>🛡️ Security Center</a>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setShowSupport(true); }} style={{ color: '#aaa', transition: 'color 0.3s' }}>Support</a>
-                            <Link to="/" style={{ marginTop: 'auto', color: 'var(--text-muted)' }}>Logout</Link>
-                        </nav>
-                    </aside>
-
-                    <main style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                        {renderContent()}
-                        <Footer />
-                    </main>
+                    {showSupport && <SupportTicketForm onClose={() => setShowSupport(false)} />}
+                    {/* Monetization Components and Chat commented out to prevent crash */}
+                    {/* <UniversalChat roomId={chatContext.roomId} userId="201" userName="Acme Corp" userRole="employer" title={chatContext.title} /> */}
                 </div>
-                {showSupport && <SupportTicketForm onClose={() => setShowSupport(false)} />}
-                {/* Monetization Components and Chat commented out to prevent crash */}
-                {/* <UniversalChat roomId={chatContext.roomId} userId="201" userName="Acme Corp" userRole="employer" title={chatContext.title} /> */}
-            </div>
-        </NotificationProvider>
+            </NotificationProvider>
+        </ErrorBoundary>
     );
 };
 export default EmployerDashboard;
