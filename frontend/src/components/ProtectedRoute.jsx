@@ -21,7 +21,7 @@ const ProtectedRoute = ({ children, allowedRoles = [] }) => {
             // Redirect to their appropriate dashboard if possible, or home
             let target = '/';
             if (user.role === 'WORKER') target = '/worker';
-            if (user.role === 'EMPLOYER') target = '/employer';
+            if (user.role === 'EMPLOYER') target = '/buyer';
             if (user.role === 'INVESTOR') target = '/investor';
             if (user.role === 'ADMIN') target = '/admin';
 

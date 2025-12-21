@@ -36,9 +36,15 @@ function App() {
 
         {/* User Dashboards (Public for Demo/Dev Access) */}
         <Route path="/worker" element={<WorkerDashboard />} />
+        <Route path="/worker-dashboard" element={<WorkerDashboard />} />
+
         <Route path="/employer" element={<EmployerDashboard />} />
         <Route path="/buyer" element={<EmployerDashboard />} />
+        <Route path="/buyer-dashboard" element={<EmployerDashboard />} />
+
         <Route path="/investor" element={<InvestorDashboard />} />
+        <Route path="/investor-dashboard" element={<InvestorDashboard />} />
+
         <Route path="/profile/:role/:userId" element={<UserProfile />} />
 
         {/* Admin Public Routes */}
