@@ -79,42 +79,42 @@ const AuthPage = () => {
             // Re-throw or stop here to prevent silent failures
             setLoading(false);
         }
-        // Mock Fallback
-        setTimeout(() => {
-            setLoading(false);
-            const mockUser = {
-                id: 'demo-user-123',
-                email: formData.email,
-                role: role, // Use selected role or default
-                fullName: formData.fullName || 'Demo User'
-            };
+    }
+};
+setLoading(false);
+const mockUser = {
+    id: 'demo-user-123',
+    email: formData.email,
+    role: role, // Use selected role or default
+    fullName: formData.fullName || 'Demo User'
+};
 
-            // For login, if role wasn't selectable, infer or default? 
-            // Login usually relies on backend to tell role. 
-            // For demo, we might default to Worker or check email? 
-            // Let's assume Worker if not specified, or Employer if 'admin' in email?
-            // Actually, if isLogin, role variable might be stale (default WORKER).
-            // Let's check email for keywords to decide mock role
-            let mockRole = role; // Default from state (which is WORKER by default on login view?)
-            if (isLogin) {
-                if (formData.email.includes('admin')) mockRole = 'ADMIN';
-                else if (formData.email.includes('employer')) mockRole = 'EMPLOYER';
-                else if (formData.email.includes('investor')) mockRole = 'INVESTOR';
-                else mockRole = 'WORKER';
-            }
+// For login, if role wasn't selectable, infer or default? 
+// Login usually relies on backend to tell role. 
+// For demo, we might default to Worker or check email? 
+// Let's assume Worker if not specified, or Employer if 'admin' in email?
+// Actually, if isLogin, role variable might be stale (default WORKER).
+// Let's check email for keywords to decide mock role
+let mockRole = role; // Default from state (which is WORKER by default on login view?)
+if (isLogin) {
+    if (formData.email.includes('admin')) mockRole = 'ADMIN';
+    else if (formData.email.includes('employer')) mockRole = 'EMPLOYER';
+    else if (formData.email.includes('investor')) mockRole = 'INVESTOR';
+    else mockRole = 'WORKER';
+}
 
-            mockUser.role = mockRole;
+mockUser.role = mockRole;
 
-            localStorage.setItem('token', 'mock-token-xyz');
-            localStorage.setItem('user', JSON.stringify(mockUser));
+localStorage.setItem('token', 'mock-token-xyz');
+localStorage.setItem('user', JSON.stringify(mockUser));
 
-            alert(`Login Successful (Demo Mode)\nWelcome, ${mockRole}!`);
+alert(`Login Successful (Demo Mode)\nWelcome, ${mockRole}!`);
 
-            if (mockRole === 'ADMIN') navigate('/admin');
-            else if (mockRole === 'WORKER') navigate('/dashboard/worker');
-            else if (mockRole === 'EMPLOYER') navigate('/dashboard/employer');
-            else if (mockRole === 'INVESTOR') navigate('/dashboard/investor'); // Assuming route exists or will default
-            else navigate('/');
+if (mockRole === 'ADMIN') navigate('/admin');
+else if (mockRole === 'WORKER') navigate('/dashboard/worker');
+else if (mockRole === 'EMPLOYER') navigate('/dashboard/employer');
+else if (mockRole === 'INVESTOR') navigate('/dashboard/investor'); // Assuming route exists or will default
+else navigate('/');
         }, 1000);
     }
 };
