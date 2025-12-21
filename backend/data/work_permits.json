@@ -1,0 +1,968 @@
+[
+  {
+    "id": "wp_mock_01",
+    "jobId": "105",
+    "jobType": "AI_MODEL_TRAINING",
+    "workerId": "101",
+    "buyerId": "201",
+    "title": "AI Model Training - Batch A",
+    "description": "Complete training for 5000 images using the provided dataset. Ensure 98% accuracy.",
+    "currency": "USD",
+    "totalAmount": 1500,
+    "workerAmount": 1320,
+    "adminCommission": 150,
+    "platformFee": 30,
+    "status": "COMPLETED",
+    "escrowLocked": true,
+    "aiRiskScore": 19,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 19/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "auditLogs": [
+      {
+        "id": "9i38p6bsm",
+        "timestamp": "2025-12-16T20:09:41.062Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "uviv3uzh6",
+        "timestamp": "2025-12-16T20:09:43.070Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "eev31avrk",
+        "timestamp": "2025-12-16T20:12:22.642Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      },
+      {
+        "id": "u5kehukcw",
+        "timestamp": "2025-12-16T21:07:38.560Z",
+        "action": "WORK_SUBMITTED",
+        "details": "Worker submitted proof: File: 1000005976.jpg",
+        "actor": "101"
+      },
+      {
+        "id": "kyh0zdop7",
+        "timestamp": "2025-12-16T21:07:41.581Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 19",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "8y6oew5f3",
+        "timestamp": "2025-12-16T21:08:17.357Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "pyit8d5vg",
+        "timestamp": "2025-12-16T21:08:19.360Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "nes6jn2rw",
+        "timestamp": "2025-12-16T21:09:56.682Z",
+        "action": "ADMIN_PAYMENT_APPROVAL",
+        "details": "Admin approved work completion. Releasing funds.",
+        "actor": "ADMIN"
+      },
+      {
+        "id": "pb3yj3ltq",
+        "timestamp": "2025-12-16T21:10:34.323Z",
+        "action": "ADMIN_PAYMENT_APPROVAL",
+        "details": "Admin approved work completion. Releasing funds.",
+        "actor": "ADMIN"
+      },
+      {
+        "id": "d5z4rbq9g",
+        "timestamp": "2025-12-16T21:15:18.358Z",
+        "action": "ADMIN_PAYMENT_APPROVAL",
+        "details": "Admin approved work completion. Releasing funds.",
+        "actor": "ADMIN"
+      },
+      {
+        "id": "g2tq76wvx",
+        "timestamp": "2025-12-16T21:15:18.378Z",
+        "action": "PAYMENT_RELEASED",
+        "details": "Escrow Distributed: Worker(1275), Admin(150)",
+        "actor": "SYSTEM"
+      }
+    ],
+    "createdAt": "2025-12-16T20:07:45.640Z",
+    "updatedAt": "2025-12-16T21:08:19.360Z",
+    "buyerDecisionTime": "2025-12-16T21:08:17.357Z",
+    "buyerDecision": "APPROVE",
+    "adminDecision": "APPROVE"
+  },
+  {
+    "id": "wp_mock_02",
+    "jobId": "106",
+    "jobType": "ENTERPRISE",
+    "workerId": "103",
+    "buyerId": "202",
+    "currency": "USD",
+    "totalAmount": 5000,
+    "workerAmount": 4400,
+    "adminCommission": 500,
+    "platformFee": 100,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "aiRiskScore": 5,
+    "aiNotes": "Verified Enterprise Client.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "auditLogs": [],
+    "createdAt": "2025-12-16T20:07:45.640Z",
+    "updatedAt": "2025-12-16T20:07:45.640Z"
+  },
+  {
+    "id": "wp_6lilsqpr3",
+    "jobId": "106",
+    "jobType": "Daily",
+    "workerId": "102",
+    "buyerId": "201",
+    "title": "Standardized Job",
+    "description": "ds vfav f qVDW  Q3 ",
+    "currency": "USD",
+    "totalAmount": 1400,
+    "workerAmount": 1232,
+    "adminCommission": 140,
+    "platformFee": 28,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_gun0m158i",
+    "aiRiskScore": 10,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 10/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "buyerDecision": "APPROVE",
+    "buyerDecisionTime": "2025-12-16T21:00:15.229Z",
+    "adminDecision": "APPROVE",
+    "auditLogs": [
+      {
+        "id": "s1ba9klt6",
+        "timestamp": "2025-12-16T20:58:41.445Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 106. Funds Locked: 1400 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "posgv7ynj",
+        "timestamp": "2025-12-16T20:58:41.469Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"Standardized Job\",\"description\":\"ds vfav f qVDW  Q3 \",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "w6b53lwvh",
+        "timestamp": "2025-12-16T20:58:44.457Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 10",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "qq4dbynmr",
+        "timestamp": "2025-12-16T21:00:15.229Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "fumdbrd0j",
+        "timestamp": "2025-12-16T21:00:17.239Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "to8d3707r",
+        "timestamp": "2025-12-16T21:00:35.783Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      }
+    ],
+    "createdAt": "2025-12-16T20:58:41.442Z",
+    "updatedAt": "2025-12-16T21:00:35.789Z"
+  },
+  {
+    "id": "wp_zofxr6nnm",
+    "jobId": "104",
+    "jobType": "Freelance",
+    "workerId": "103",
+    "buyerId": "201",
+    "title": "Smart Contract Audit",
+    "currency": "USD",
+    "totalAmount": 1600,
+    "workerAmount": 1408,
+    "adminCommission": 160,
+    "platformFee": 32,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_g3tkzalbo",
+    "aiRiskScore": 18,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 18/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "buyerDecision": "APPROVE",
+    "buyerDecisionTime": "2025-12-17T08:40:56.181Z",
+    "adminDecision": "APPROVE",
+    "auditLogs": [
+      {
+        "id": "hxjq7c9lz",
+        "timestamp": "2025-12-17T08:40:20.469Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 104. Funds Locked: 1600 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "pyx21ivez",
+        "timestamp": "2025-12-17T08:40:20.493Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"Smart Contract Audit\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "qioz35927",
+        "timestamp": "2025-12-17T08:40:23.504Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 18",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "2af9yjnqx",
+        "timestamp": "2025-12-17T08:40:56.181Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "43xw18j95",
+        "timestamp": "2025-12-17T08:40:58.191Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "glntuq4iq",
+        "timestamp": "2025-12-17T08:41:35.887Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      }
+    ],
+    "createdAt": "2025-12-17T08:40:20.458Z",
+    "updatedAt": "2025-12-17T08:41:35.890Z"
+  },
+  {
+    "id": "wp_7kdih0zl9",
+    "jobId": "105",
+    "jobType": "Freelance",
+    "workerId": "101",
+    "buyerId": "201",
+    "title": "AI Trading Bot",
+    "description": "An AI agent that trades crypto.",
+    "currency": "USD",
+    "totalAmount": 1500,
+    "workerAmount": 1320,
+    "adminCommission": 150,
+    "platformFee": 75,
+    "status": "COMPLETED",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_ue0crswgp",
+    "aiRiskScore": 19,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 19/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "buyerDecision": "APPROVE",
+    "buyerDecisionTime": "2025-12-17T08:51:30.129Z",
+    "adminDecision": "APPROVE",
+    "auditLogs": [
+      {
+        "id": "vrtar624y",
+        "timestamp": "2025-12-17T08:40:41.123Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 105. Funds Locked: 1500 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "yr1wiyxva",
+        "timestamp": "2025-12-17T08:40:41.145Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"AI Trading Bot\",\"description\":\"An AI agent that trades crypto.\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "wfl903w79",
+        "timestamp": "2025-12-17T08:40:44.144Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 11",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "c2vur3j94",
+        "timestamp": "2025-12-17T08:41:00.654Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "15xf4z97b",
+        "timestamp": "2025-12-17T08:41:02.663Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "6bxnn6l5u",
+        "timestamp": "2025-12-17T08:41:38.983Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      },
+      {
+        "id": "seckwu1tb",
+        "timestamp": "2025-12-17T08:50:23.775Z",
+        "action": "WORK_SUBMITTED",
+        "details": "Worker submitted proof: File: 1765832356967.jpg",
+        "actor": "101"
+      },
+      {
+        "id": "ro0p3iytz",
+        "timestamp": "2025-12-17T08:50:26.800Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 19",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "8bm2r65cp",
+        "timestamp": "2025-12-17T08:51:30.129Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "a2l1cde1y",
+        "timestamp": "2025-12-17T08:51:32.134Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "a3kcohi30",
+        "timestamp": "2025-12-17T08:51:57.394Z",
+        "action": "ADMIN_PAYMENT_APPROVAL",
+        "details": "Admin approved work completion. Releasing funds.",
+        "actor": "ADMIN"
+      },
+      {
+        "id": "oxvbar7d6",
+        "timestamp": "2025-12-17T08:51:57.454Z",
+        "action": "PAYMENT_RELEASED",
+        "details": "Escrow Distributed: Worker(1275), Admin(150)",
+        "actor": "SYSTEM"
+      }
+    ],
+    "createdAt": "2025-12-17T08:40:41.123Z",
+    "updatedAt": "2025-12-17T08:51:32.134Z"
+  },
+  {
+    "id": "wp_1zpclo08w",
+    "jobId": "103",
+    "jobType": "Freelance",
+    "workerId": "101",
+    "buyerId": "201",
+    "title": "SEO Audit",
+    "currency": "USD",
+    "totalAmount": 1500,
+    "workerAmount": 1320,
+    "adminCommission": 150,
+    "platformFee": 30,
+    "status": "CANCELLED",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_gppwc78ql",
+    "aiRiskScore": 5,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 5/100.\n[Behavior] Buyer rejected startup.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "auditLogs": [
+      {
+        "id": "uhsfsnh9x",
+        "timestamp": "2025-12-17T17:42:44.063Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 103. Funds Locked: 1500 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "760x53biu",
+        "timestamp": "2025-12-17T17:42:44.228Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"SEO Audit\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "tj87bj0ht",
+        "timestamp": "2025-12-17T17:42:47.072Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 4",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "w3qbxdmwo",
+        "timestamp": "2025-12-17T18:15:28.784Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "4m2y1fnhx",
+        "timestamp": "2025-12-17T18:15:30.800Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "l7ruwdhhh",
+        "timestamp": "2025-12-17T18:17:46.646Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      },
+      {
+        "id": "4678orm5p",
+        "timestamp": "2025-12-17T18:18:55.626Z",
+        "action": "WORK_SUBMITTED",
+        "details": "Worker submitted proof: File: Screenshot 2025-12-17 165815.png",
+        "actor": "101"
+      },
+      {
+        "id": "zn25m69ij",
+        "timestamp": "2025-12-17T18:18:58.632Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 5",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "c8wi2cwlx",
+        "timestamp": "2025-12-17T18:21:09.003Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: REJECT",
+        "actor": "201"
+      },
+      {
+        "id": "mw34rwx9y",
+        "timestamp": "2025-12-17T18:21:09.009Z",
+        "action": "PERMIT_CANCELLED",
+        "details": "Permit cancelled by buyer. Funds unlocked: 1500 USD",
+        "actor": "201"
+      }
+    ],
+    "createdAt": "2025-12-17T17:42:44.063Z",
+    "updatedAt": "2025-12-17T18:18:58.632Z",
+    "buyerDecisionTime": "2025-12-17T18:21:09.003Z",
+    "buyerDecision": "REJECT",
+    "adminDecision": "APPROVE"
+  },
+  {
+    "id": "wp_jk0rouu22",
+    "jobId": "103",
+    "jobType": "Freelance",
+    "workerId": "102",
+    "buyerId": "201",
+    "title": "SEO Audit",
+    "currency": "USD",
+    "totalAmount": 1400,
+    "workerAmount": 1232,
+    "adminCommission": 140,
+    "platformFee": 28,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_f4xx87h0y",
+    "aiRiskScore": 9,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 9/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "auditLogs": [
+      {
+        "id": "csrcnhcvz",
+        "timestamp": "2025-12-17T17:54:03.817Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 103. Funds Locked: 1400 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "bip32q1td",
+        "timestamp": "2025-12-17T17:54:03.833Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"SEO Audit\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "jof31j3le",
+        "timestamp": "2025-12-17T17:54:06.839Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 9",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "p1wsj3css",
+        "timestamp": "2025-12-17T18:15:06.644Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "lkjgra1xq",
+        "timestamp": "2025-12-17T18:15:08.654Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "hnaqn7e94",
+        "timestamp": "2025-12-17T18:17:49.001Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      }
+    ],
+    "createdAt": "2025-12-17T17:54:03.817Z",
+    "updatedAt": "2025-12-17T18:17:49.004Z",
+    "buyerDecisionTime": "2025-12-17T18:15:06.644Z",
+    "buyerDecision": "APPROVE",
+    "adminDecision": "APPROVE"
+  },
+  {
+    "id": "wp_jb6gwcm81",
+    "jobId": "103",
+    "jobType": "Freelance",
+    "workerId": "102",
+    "buyerId": "201",
+    "title": "SEO Audit",
+    "currency": "USD",
+    "totalAmount": 1400,
+    "workerAmount": 1232,
+    "adminCommission": 140,
+    "platformFee": 28,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_wtu6nvtib",
+    "aiRiskScore": 1,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 1/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "auditLogs": [
+      {
+        "id": "f5jhfxcau",
+        "timestamp": "2025-12-17T17:59:58.926Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 103. Funds Locked: 1400 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "3l5yln3cs",
+        "timestamp": "2025-12-17T17:59:58.940Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"SEO Audit\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "ejgvuws73",
+        "timestamp": "2025-12-17T18:00:01.931Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 1",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "5alxhi6yq",
+        "timestamp": "2025-12-17T18:14:24.024Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "hznfcey8m",
+        "timestamp": "2025-12-17T18:14:26.041Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "ss9cylph3",
+        "timestamp": "2025-12-17T18:17:52.020Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      }
+    ],
+    "createdAt": "2025-12-17T17:59:58.926Z",
+    "updatedAt": "2025-12-17T18:17:52.026Z",
+    "buyerDecisionTime": "2025-12-17T18:14:24.024Z",
+    "buyerDecision": "APPROVE",
+    "adminDecision": "APPROVE"
+  },
+  {
+    "id": "wp_080l9438p",
+    "jobId": "104",
+    "jobType": "Freelance",
+    "workerId": "102",
+    "buyerId": "201",
+    "title": "Smart Contract Audit",
+    "currency": "USD",
+    "totalAmount": 1400,
+    "workerAmount": 1232,
+    "adminCommission": 140,
+    "platformFee": 28,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_ahftc247a",
+    "aiRiskScore": 1,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 1/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "buyerDecision": "APPROVE",
+    "buyerDecisionTime": "2025-12-17T18:11:58.261Z",
+    "adminDecision": "APPROVE",
+    "auditLogs": [
+      {
+        "id": "9rj4gcxjt",
+        "timestamp": "2025-12-17T18:11:12.914Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 104. Funds Locked: 1400 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "dy61gpehz",
+        "timestamp": "2025-12-17T18:11:13.013Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"Smart Contract Audit\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "f06clypdb",
+        "timestamp": "2025-12-17T18:11:15.935Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 1",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "no7x2upf0",
+        "timestamp": "2025-12-17T18:11:58.261Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "fnhum3625",
+        "timestamp": "2025-12-17T18:12:00.274Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Forwarded to Admin.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "4106q9x68",
+        "timestamp": "2025-12-17T18:12:55.492Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      }
+    ],
+    "createdAt": "2025-12-17T18:11:12.913Z",
+    "updatedAt": "2025-12-17T18:12:55.496Z"
+  },
+  {
+    "id": "wp_t0n0qez1o",
+    "jobId": "105",
+    "jobType": "FREELANCE",
+    "workerId": "101",
+    "buyerId": "201",
+    "currency": "USD",
+    "totalAmount": 50,
+    "workerAmount": 44,
+    "adminCommission": 5,
+    "platformFee": 1,
+    "status": "PENDING_BUYER_REVIEW",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_rxcrwg6jo",
+    "aiRiskScore": 10,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 10/100.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "PENDING",
+      "stage3_adminReview": "PENDING"
+    },
+    "auditLogs": [
+      {
+        "id": "0yp34mdxg",
+        "timestamp": "2025-12-19T12:04:47.547Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 105. Funds Locked: 50 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "qffcdhv21",
+        "timestamp": "2025-12-19T12:04:50.558Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 10",
+        "actor": "AI_AGENT"
+      }
+    ],
+    "createdAt": "2025-12-19T12:04:47.547Z",
+    "updatedAt": "2025-12-19T12:04:50.558Z"
+  },
+  {
+    "id": "wp_ert191o9b",
+    "jobId": "109-1766140240481",
+    "jobType": "PART-TIME",
+    "workerId": "101",
+    "buyerId": "201",
+    "title": "kopa kab",
+    "description": "kopakupir oviggota 1 bosor",
+    "currency": "USD",
+    "totalAmount": 21,
+    "workerAmount": 18.479999999999997,
+    "adminCommission": 2.1,
+    "platformFee": 0.42,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_e1yxq4k95",
+    "aiRiskScore": 7,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 7/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "buyerDecision": "APPROVE",
+    "buyerDecisionTime": "2025-12-19T12:11:07.157Z",
+    "adminDecision": "APPROVE",
+    "auditLogs": [
+      {
+        "id": "f7mt66tyu",
+        "timestamp": "2025-12-19T12:09:27.837Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 109-1766140240481. Funds Locked: 21 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "q7ki6woqq",
+        "timestamp": "2025-12-19T12:09:27.847Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"kopa kab\",\"description\":\"kopakupir oviggota 1 bosor\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "1fmvu9o2r",
+        "timestamp": "2025-12-19T12:09:30.839Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 7",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "weklpzyz7",
+        "timestamp": "2025-12-19T12:11:07.157Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "pmtxss9f3",
+        "timestamp": "2025-12-19T12:11:09.172Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Auto-forwarding to Admin Approval.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "6zfj7862r",
+        "timestamp": "2025-12-19T12:11:09.176Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      }
+    ],
+    "createdAt": "2025-12-19T12:09:27.837Z",
+    "updatedAt": "2025-12-19T12:11:09.172Z"
+  },
+  {
+    "id": "wp_a51tciy7y",
+    "jobId": "110-1766147428526",
+    "jobType": "FULL-TIME",
+    "workerId": "101",
+    "buyerId": "201",
+    "title": "samsu job",
+    "description": "kopa samsu selsman",
+    "currency": "USD",
+    "totalAmount": 80,
+    "workerAmount": 70.4,
+    "adminCommission": 8,
+    "platformFee": 1.6,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_a10ohlcpk",
+    "aiRiskScore": 5,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 5/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "buyerDecision": "APPROVE",
+    "buyerDecisionTime": "2025-12-19T12:33:30.155Z",
+    "adminDecision": "APPROVE",
+    "auditLogs": [
+      {
+        "id": "vpr6x7yq5",
+        "timestamp": "2025-12-19T12:32:31.157Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 110-1766147428526. Funds Locked: 80 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "4vokb3vtt",
+        "timestamp": "2025-12-19T12:32:31.180Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"samsu job\",\"description\":\"kopa samsu selsman\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "vol6xm5aw",
+        "timestamp": "2025-12-19T12:32:34.182Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 5",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "2fvulne08",
+        "timestamp": "2025-12-19T12:33:30.155Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "59qb3nowp",
+        "timestamp": "2025-12-19T12:33:32.176Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Auto-forwarding to Admin Approval.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "sn9x1lgyl",
+        "timestamp": "2025-12-19T12:33:32.183Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      }
+    ],
+    "createdAt": "2025-12-19T12:32:31.157Z",
+    "updatedAt": "2025-12-19T12:33:32.187Z"
+  },
+  {
+    "id": "wp_0uysxzx3a",
+    "jobId": "111-1766149625649",
+    "jobType": "PART-TIME",
+    "workerId": "101",
+    "buyerId": "201",
+    "title": "tinku mastan",
+    "description": "mastani korte hobe",
+    "currency": "USD",
+    "totalAmount": 90,
+    "workerAmount": 79.2,
+    "adminCommission": 9,
+    "platformFee": 1.8,
+    "status": "ACTIVE",
+    "escrowLocked": true,
+    "escrowTransactionId": "txn_vu4226il7",
+    "aiRiskScore": 12,
+    "aiNotes": "AI Pre-Check Passed. Risk Score: 12/100.\n[Behavior] Normal approval.",
+    "aiVerificationStages": {
+      "stage1_preCheck": "PASS",
+      "stage2_behavior": "NORMAL",
+      "stage3_adminReview": "APPROVED"
+    },
+    "buyerDecision": "APPROVE",
+    "buyerDecisionTime": "2025-12-19T13:10:49.201Z",
+    "adminDecision": "APPROVE",
+    "auditLogs": [
+      {
+        "id": "kc8nfec63",
+        "timestamp": "2025-12-19T13:08:38.274Z",
+        "action": "CREATE_PERMIT",
+        "details": "Permit created for Job 111-1766149625649. Funds Locked: 90 USD",
+        "actor": "SYSTEM"
+      },
+      {
+        "id": "2fr6dojo6",
+        "timestamp": "2025-12-19T13:08:38.288Z",
+        "action": "PERMIT_UPDATE",
+        "details": "Updated details: {\"title\":\"tinku mastan\",\"description\":\"mastani korte hobe\",\"userId\":\"201\"}",
+        "actor": "201"
+      },
+      {
+        "id": "6fvenw8hn",
+        "timestamp": "2025-12-19T13:08:41.281Z",
+        "action": "AI_CHECK_PASS",
+        "details": "Risk Score: 12",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "74ibunys9",
+        "timestamp": "2025-12-19T13:10:49.202Z",
+        "action": "BUYER_REVIEW",
+        "details": "Buyer decided: APPROVE",
+        "actor": "201"
+      },
+      {
+        "id": "t1wh6suxu",
+        "timestamp": "2025-12-19T13:10:51.214Z",
+        "action": "AI_BEHAVIOR_ANALYSIS",
+        "details": "Behavior analysis complete. Auto-forwarding to Admin Approval.",
+        "actor": "AI_AGENT"
+      },
+      {
+        "id": "2mv4upivs",
+        "timestamp": "2025-12-19T13:10:51.221Z",
+        "action": "ADMIN_APPROVAL",
+        "details": "Permit Activated. Work Authorized.",
+        "actor": "ADMIN"
+      }
+    ],
+    "createdAt": "2025-12-19T13:08:38.273Z",
+    "updatedAt": "2025-12-19T13:10:51.214Z"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "clauses": [
+    {
+      "id": "mandatory-001",
+      "content": "The Admin/Platform is a facilitator only. Users accept all financial and project risks. Admin holds no liability for losses or disputes.",
+      "isMandatory": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[branch "main"]
+	gk-last-accessed = 2025-12-20T05:48:45.748Z
+	gk-last-modified = 2025-12-19T20:44:21.183Z
+	remote = origin
+	merge = refs/heads/main
+[remote "origin"]
+	url = https://github.com/khokonjawhati-zyra/world-job.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "admin-production"]
+	vscode-merge-base = origin/main
+	gk-last-accessed = 2025-12-20T06:33:23.780Z
+	gk-last-modified = 2025-12-20T06:33:23.780Z

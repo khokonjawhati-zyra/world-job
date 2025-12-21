@@ -1,0 +1,35 @@
+{
+    "schema_type": "JSON-Model (NoSQL)",
+    "entities": {
+        "WalletTransaction": {
+            "description": "Ledger entry for all financial movements",
+            "fields": {
+                "id": "string (txn_...)",
+                "userId": "string",
+                "type": "enum(DEPOSIT, WITHDRAWAL, ESCROW_LOCK, etc.)",
+                "amount": "number",
+                "currency": "string",
+                "flow": "enum(IN, OUT)",
+                "status": "enum(PENDING, COMPLETED, FAILED, LOCKED)",
+                "referenceId": "string (optional)",
+                "description": "string",
+                "timestamp": "Date",
+                "hash": "string (SHA256)",
+                "prevHash": "string (SHA256)"
+            }
+        },
+        "PaymentState": {
+            "description": "Root object of payment_data.json",
+            "fields": {
+                "ledger": "Array<WalletTransaction>",
+                "paymentMethods": "Array<any>",
+                "withdrawalRequests": "Array<WithdrawalRequest>",
+                "systemGateways": "Array<any>",
+                "globalMethodStatus": "Map<string, boolean>",
+                "referralSettings": "Object",
+                "processedReferrals": "Set<string>"
+            }
+        }
+    },
+    "database_url": "N/A (File System: backend/data/payment_data.json)"
+}

@@ -1,0 +1,1042 @@
+{
+  "ledger": [
+    {
+      "id": "txn_ihhngnazk",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 1200,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Exchange: Bought with USD",
+      "timestamp": "2025-12-19T13:25:53.946Z",
+      "referenceId": "exc_1766150753946",
+      "prevHash": "98b63921ab6e0e67ae2f012465c1f9c1b803e0dd36e9db8a0c94f9c6a2b474ca",
+      "hash": "40c9aff7966e55598585d22d61367203ec002fcbb0a748fae325d3caac4a3cd5"
+    },
+    {
+      "id": "txn_9l4c4i194",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 10,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Exchange: Sold for BDT",
+      "timestamp": "2025-12-19T13:25:53.942Z",
+      "referenceId": "exc_1766150753942",
+      "hash": "98b63921ab6e0e67ae2f012465c1f9c1b803e0dd36e9db8a0c94f9c6a2b474ca"
+    },
+    {
+      "id": "txn_vu4226il7",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 90,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_111-1766149625649",
+      "timestamp": "2025-12-19T13:08:38.248Z",
+      "referenceId": "WorkPermit_111-1766149625649",
+      "prevHash": "df1e7d704471e4320846ec9aa748d92fa030dde05b2112f317f3a698892810cf",
+      "hash": "9cddcff77432211f39867f6acfc483fd6330570dc11d470ef4bffd905bdb9ce5"
+    },
+    {
+      "id": "txn_a10ohlcpk",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 80,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_110-1766147428526",
+      "timestamp": "2025-12-19T12:32:31.149Z",
+      "referenceId": "WorkPermit_110-1766147428526",
+      "prevHash": "ba9ed9f503c20da5b0c1875dd71e74aa3534b1d6d4b175868ed5aefe48a9fa27",
+      "hash": "df1e7d704471e4320846ec9aa748d92fa030dde05b2112f317f3a698892810cf"
+    },
+    {
+      "id": "txn_e1yxq4k95",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 21,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_109-1766140240481",
+      "timestamp": "2025-12-19T12:09:27.788Z",
+      "referenceId": "WorkPermit_109-1766140240481",
+      "prevHash": "5db17821a7ead1fc16ec43117b89425386263cbe2494fa60475a86dc83ff1f45",
+      "hash": "ba9ed9f503c20da5b0c1875dd71e74aa3534b1d6d4b175868ed5aefe48a9fa27"
+    },
+    {
+      "id": "txn_rxcrwg6jo",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 50,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_105",
+      "timestamp": "2025-12-19T12:04:47.542Z",
+      "referenceId": "WorkPermit_105",
+      "prevHash": "94b62f54a69112fde785d41bb39bc2df3bcf35c3f7e237fd4abaf2a2364979a7",
+      "hash": "5db17821a7ead1fc16ec43117b89425386263cbe2494fa60475a86dc83ff1f45"
+    },
+    {
+      "id": "txn_nqxz04h0i",
+      "userId": "wallet_admin_main",
+      "type": "WITHDRAWAL",
+      "amount": 10,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Admin Profit Withdrawal via Bank Transfer",
+      "timestamp": "2025-12-18T12:01:13.354Z",
+      "hash": "94b62f54a69112fde785d41bb39bc2df3bcf35c3f7e237fd4abaf2a2364979a7"
+    },
+    {
+      "id": "txn_r7c2tjw3k",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 49.99,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Subscription Upgrade: Business",
+      "timestamp": "2025-12-17T18:30:57.902Z"
+    },
+    {
+      "id": "txn_49lt9r3lz",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 1500,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Unlock/Refund for Refund_Start_Reject_wp_1zpclo08w",
+      "timestamp": "2025-12-17T18:21:09.006Z",
+      "referenceId": "Refund_Start_Reject_wp_1zpclo08w"
+    },
+    {
+      "id": "txn_wart1l427",
+      "userId": "101",
+      "type": "WITHDRAWAL",
+      "amount": 1235.04,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "FAILED",
+      "description": "Withdrawal Reserved",
+      "timestamp": "2025-12-17T18:16:18.150Z",
+      "referenceId": "req_65haj46xs"
+    },
+    {
+      "id": "txn_ahftc247a",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1400,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_104",
+      "timestamp": "2025-12-17T18:11:12.866Z",
+      "referenceId": "WorkPermit_104"
+    },
+    {
+      "id": "txn_wtu6nvtib",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1400,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_103",
+      "timestamp": "2025-12-17T17:59:58.924Z",
+      "referenceId": "WorkPermit_103"
+    },
+    {
+      "id": "txn_f4xx87h0y",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1400,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_103",
+      "timestamp": "2025-12-17T17:54:03.813Z",
+      "referenceId": "WorkPermit_103"
+    },
+    {
+      "id": "txn_gppwc78ql",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1500,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_103",
+      "timestamp": "2025-12-17T17:42:44.059Z",
+      "referenceId": "WorkPermit_103"
+    },
+    {
+      "id": "txn_w8j1nc7a3",
+      "userId": "101",
+      "type": "DEPOSIT",
+      "amount": 200,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Deposit via 0.1128258656061617",
+      "timestamp": "2025-12-17T10:40:47.575Z"
+    },
+    {
+      "id": "txn_xvlzb25sq",
+      "userId": "101",
+      "type": "ADJUSTMENT",
+      "amount": 9.99,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Subscription Upgrade: Pro Worker",
+      "timestamp": "2025-12-17T10:09:36.262Z"
+    },
+    {
+      "id": "txn_lwr1ziaou",
+      "userId": "101",
+      "type": "ADJUSTMENT",
+      "amount": 9.99,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Subscription Upgrade: Pro Worker",
+      "timestamp": "2025-12-17T10:08:41.684Z"
+    },
+    {
+      "id": "txn_qpeqjh5rb",
+      "userId": "101",
+      "type": "ADJUSTMENT",
+      "amount": 9.99,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Subscription Upgrade: Pro Worker",
+      "timestamp": "2025-12-17T10:08:26.765Z"
+    },
+    {
+      "id": "txn_40j4khbv6",
+      "userId": "101",
+      "type": "ADJUSTMENT",
+      "amount": 9.99,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Subscription Upgrade: Pro Worker",
+      "timestamp": "2025-12-17T10:00:13.361Z"
+    },
+    {
+      "id": "txn_fjwclutag",
+      "userId": "wallet_platform_fees",
+      "type": "FEE_COLLECTION",
+      "amount": 75,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Platform Fee for Job 105",
+      "timestamp": "2025-12-17T08:51:57.421Z",
+      "referenceId": "105"
+    },
+    {
+      "id": "txn_vq1tthzak",
+      "userId": "wallet_admin_main",
+      "type": "COMMISSION",
+      "amount": 150,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Admin Commission for Job 105",
+      "timestamp": "2025-12-17T08:51:57.421Z",
+      "referenceId": "105"
+    },
+    {
+      "id": "txn_t2cz1sn1l",
+      "userId": "101",
+      "type": "PAYMENT_DISTRIBUTION",
+      "amount": 1275,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Net Salary for Job 105",
+      "timestamp": "2025-12-17T08:51:57.420Z",
+      "referenceId": "105"
+    },
+    {
+      "id": "txn_b7wkv0izh",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1500,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Retroactive Lock for 105",
+      "timestamp": "2025-12-17T08:51:57.413Z",
+      "referenceId": "105"
+    },
+    {
+      "id": "txn_ue0crswgp",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1500,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_105",
+      "timestamp": "2025-12-17T08:40:41.114Z",
+      "referenceId": "WorkPermit_105"
+    },
+    {
+      "id": "txn_g3tkzalbo",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1600,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_104",
+      "timestamp": "2025-12-17T08:40:20.454Z",
+      "referenceId": "WorkPermit_104"
+    },
+    {
+      "id": "txn_y41cg57mu",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 166666.66666666666,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Exchange: Bought with BDT",
+      "timestamp": "2025-12-17T08:39:37.488Z",
+      "referenceId": "exc_1765960777488"
+    },
+    {
+      "id": "txn_iv7ix80jl",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 20000000,
+      "currency": "BDT",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Exchange: Sold for USD",
+      "timestamp": "2025-12-17T08:39:37.486Z",
+      "referenceId": "exc_1765960777486"
+    },
+    {
+      "id": "txn_i1qmmqtb1",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 48000,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Exchange: Bought with USD",
+      "timestamp": "2025-12-17T08:39:05.095Z",
+      "referenceId": "exc_1765960745095"
+    },
+    {
+      "id": "txn_idxf5rkzq",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 400,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Exchange: Sold for BDT",
+      "timestamp": "2025-12-17T08:39:05.093Z",
+      "referenceId": "exc_1765960745093"
+    },
+    {
+      "id": "txn_g72ff2is7",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 1666.6666666666667,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Exchange: Bought with BDT",
+      "timestamp": "2025-12-17T08:37:45.339Z",
+      "referenceId": "exc_1765960665338"
+    },
+    {
+      "id": "txn_xwb89f3nt",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 200000,
+      "currency": "BDT",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Exchange: Sold for USD",
+      "timestamp": "2025-12-17T08:37:45.331Z",
+      "referenceId": "exc_1765960665331"
+    },
+    {
+      "id": "txn_636h8o8mw",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 1.6666666666666667,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Exchange: Bought with BDT",
+      "timestamp": "2025-12-17T08:32:19.663Z",
+      "referenceId": "exc_1765960339663"
+    },
+    {
+      "id": "txn_nev18wthu",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 200,
+      "currency": "BDT",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Exchange: Sold for USD",
+      "timestamp": "2025-12-17T08:32:19.660Z",
+      "referenceId": "exc_1765960339658"
+    },
+    {
+      "id": "txn_ry7nz2wcb",
+      "userId": "201",
+      "type": "DEPOSIT",
+      "amount": 20000000,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Deposit via 0.126653863591617",
+      "timestamp": "2025-12-17T08:13:10.538Z"
+    },
+    {
+      "id": "txn_p95if0em9",
+      "userId": "101",
+      "type": "WITHDRAWAL",
+      "amount": 1275,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "FAILED",
+      "description": "Withdrawal Reserved",
+      "timestamp": "2025-12-17T06:13:46.453Z",
+      "referenceId": "req_n6bytf7m5"
+    },
+    {
+      "id": "txn_ytf17bn4b",
+      "userId": "wallet_admin_main",
+      "type": "COMMISSION",
+      "amount": 150,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Admin Commission for Job 105",
+      "timestamp": "2025-12-16T21:15:18.369Z",
+      "referenceId": "105"
+    },
+    {
+      "id": "txn_4y5htcz2t",
+      "userId": "wallet_platform_fees",
+      "type": "FEE_COLLECTION",
+      "amount": 75,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Platform Fee for Job 105",
+      "timestamp": "2025-12-16T21:15:18.368Z",
+      "referenceId": "105"
+    },
+    {
+      "id": "txn_wnhexk1vr",
+      "userId": "101",
+      "type": "PAYMENT_DISTRIBUTION",
+      "amount": 1275,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Net Salary for Job 105",
+      "timestamp": "2025-12-16T21:15:18.367Z",
+      "referenceId": "105"
+    },
+    {
+      "id": "txn_suj8au3dq",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1500,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Retroactive Lock for 105",
+      "timestamp": "2025-12-16T21:15:18.362Z",
+      "referenceId": "105"
+    },
+    {
+      "id": "txn_o5ej6lj3m",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 0,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "System Init",
+      "timestamp": "2025-12-16T21:14:41.774Z"
+    },
+    {
+      "id": "txn_3zlfttvrz",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 0,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "System Init",
+      "timestamp": "2025-12-16T21:13:44.429Z"
+    },
+    {
+      "id": "txn_gun0m158i",
+      "userId": "201",
+      "type": "ESCROW_LOCK",
+      "amount": 1400,
+      "currency": "USD",
+      "flow": "OUT",
+      "status": "LOCKED",
+      "description": "Escrow Lock for WorkPermit_106",
+      "timestamp": "2025-12-16T20:58:41.403Z",
+      "referenceId": "WorkPermit_106"
+    },
+    {
+      "id": "txn_c4m7htv79",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 0,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "System Init",
+      "timestamp": "2025-12-16T20:07:59.601Z"
+    },
+    {
+      "id": "txn_d3dt0py5t",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 0,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "System Init",
+      "timestamp": "2025-12-16T20:07:45.625Z"
+    },
+    {
+      "id": "txn_wmcgx8g5z",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 0,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "System Init",
+      "timestamp": "2025-12-16T19:49:15.925Z"
+    },
+    {
+      "id": "txn_nf7dppbvj",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 0,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "System Init",
+      "timestamp": "2025-12-16T19:48:40.311Z"
+    },
+    {
+      "id": "txn_ije8v19e3",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 0,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "System Init",
+      "timestamp": "2025-12-16T19:48:17.640Z"
+    },
+    {
+      "id": "txn_kqndlqs5o",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 1666.6666666666667,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Exchange: Bought with BDT",
+      "timestamp": "2025-12-16T19:19:01.353Z",
+      "referenceId": "exc_1765912741352"
+    },
+    {
+      "id": "txn_u0yph6szq",
+      "userId": "201",
+      "type": "ADJUSTMENT",
+      "amount": 200000,
+      "currency": "BDT",
+      "flow": "OUT",
+      "status": "COMPLETED",
+      "description": "Exchange: Sold for USD",
+      "timestamp": "2025-12-16T19:19:01.351Z",
+      "referenceId": "exc_1765912741351"
+    },
+    {
+      "id": "txn_90k7essoz",
+      "userId": "201",
+      "type": "DEPOSIT",
+      "amount": 2000000,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Deposit via 0.126653863591617",
+      "timestamp": "2025-12-16T19:17:52.408Z"
+    },
+    {
+      "id": "txn_whuqx4vhu",
+      "userId": "wallet_admin_main",
+      "type": "ADJUSTMENT",
+      "amount": 0,
+      "currency": "USD",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "System Init",
+      "timestamp": "2025-12-16T19:16:08.814Z"
+    },
+    {
+      "id": "txn_clutxt0ec",
+      "userId": "901",
+      "type": "DEPOSIT",
+      "amount": 20000,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Deposit via BKASH (0.40495912576085946)",
+      "timestamp": "2025-12-19T14:01:31.305Z",
+      "hash": "847f184d3e319a436b7e7ecf8efdeaa4fffe8b48303827510a830ccee8a69566"
+    },
+    {
+      "id": "txn_9o7fcr9p9",
+      "userId": "101",
+      "type": "DEPOSIT",
+      "amount": 20000,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Deposit via LOCAL (gw_iua4nxf9w)",
+      "timestamp": "2025-12-19T14:13:50.627Z",
+      "prevHash": "847f184d3e319a436b7e7ecf8efdeaa4fffe8b48303827510a830ccee8a69566",
+      "hash": "3b1207d87845ee154cbb9edf41d9dfcda5b9a576358e5064f91630dd3bf00776"
+    },
+    {
+      "id": "txn_ea8cqsdgs",
+      "userId": "201",
+      "type": "DEPOSIT",
+      "amount": 100000,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Deposit via LOCAL (gw_iua4nxf9w)",
+      "timestamp": "2025-12-19T14:14:43.184Z",
+      "prevHash": "3b1207d87845ee154cbb9edf41d9dfcda5b9a576358e5064f91630dd3bf00776",
+      "hash": "3467b37f819eb9e0ebdb7f4475361b4d640d0e94b12e836b993669313c76d9b8"
+    },
+    {
+      "id": "txn_n8whmkz2p",
+      "userId": "901",
+      "type": "DEPOSIT",
+      "amount": 200000,
+      "currency": "BDT",
+      "flow": "IN",
+      "status": "COMPLETED",
+      "description": "Deposit via BKASH (0.5106932553400975)",
+      "timestamp": "2025-12-19T14:17:10.081Z",
+      "prevHash": "3467b37f819eb9e0ebdb7f4475361b4d640d0e94b12e836b993669313c76d9b8",
+      "hash": "b724359887c6415b24873a6eeec16d9efc5564fb0ebb520a5c4e2e20234fccf8"
+    }
+  ],
+  "paymentMethods": [
+    {
+      "userId": "201",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920"
+      },
+      "currency": "BDT",
+      "id": "0.126653863591617",
+      "status": "active"
+    },
+    {
+      "userId": "201",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920"
+      },
+      "currency": "BDT",
+      "id": "0.5796165853258884",
+      "status": "active"
+    },
+    {
+      "userId": "101",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920"
+      },
+      "currency": "BDT",
+      "id": "0.1128258656061617",
+      "status": "active"
+    },
+    {
+      "userId": "101",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920"
+      },
+      "currency": "BDT",
+      "id": "0.6268555049970539",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.9401872300064528",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.40495912576085946",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.696649330341965",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.9273346926081438",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.7851191273947272",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.5102103534252999",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.6448467892846329",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.7852138199566427",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.41156828650096733",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.9487073805674077",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.05042786496492002",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.15694652037098844",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.8809196675548732",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.5082719678469968",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.23685626650559966",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.7964362452619409",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.811087396408238",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.5106932553400975",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.40308394012211235",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.7971126034456818",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.053737122097934464",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.5194601142813116",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.908072516929378",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.5100091612037396",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.4462498541795301",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.016782755485538203",
+      "status": "active"
+    },
+    {
+      "userId": "901",
+      "type": "bkash",
+      "details": {
+        "phoneNumber": "01711906920",
+        "provider": "bkash"
+      },
+      "currency": "BDT",
+      "id": "0.6445414812590206",
+      "status": "active"
+    }
+  ],
+  "withdrawalRequests": [
+    {
+      "id": "req_n6bytf7m5",
+      "userId": "101",
+      "amount": 1275,
+      "currency": "USD",
+      "methodId": "Bank Transfer (Default)",
+      "status": "REJECTED",
+      "date": "2025-12-17T06:13:46.453Z"
+    },
+    {
+      "id": "req_65haj46xs",
+      "userId": "101",
+      "amount": 1235.04,
+      "currency": "USD",
+      "methodId": "Bank Transfer (Default)",
+      "status": "REJECTED",
+      "date": "2025-12-17T18:16:18.150Z"
+    }
+  ],
+  "systemGateways": [
+    {
+      "id": "gw_iua4nxf9w",
+      "name": "bkash",
+      "type": "LOCAL",
+      "category": "MOBILE_BANKING",
+      "details": "01711906920",
+      "isEnabled": true,
+      "createdAt": "2025-12-18T12:00:46.440Z"
+    }
+  ],
+  "globalMethodStatus": {
+    "stripe": true,
+    "bkash": true
+  },
+  "referralSettings": {
+    "enabled": true,
+    "type": "FIXED",
+    "value": 3
+  },
+  "processedReferrals": []
+}

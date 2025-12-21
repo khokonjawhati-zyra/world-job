@@ -1,0 +1,38 @@
+{
+    "project_name": "World Job Market",
+    "features": {
+        "Wallet": {
+            "service": "backend/src/payment/payment.service.ts",
+            "module": "backend/src/payment/payment.module.ts",
+            "key_functions": [
+                "recordTransaction",
+                "getBalance",
+                "depositFunds",
+                "requestWithdrawal",
+                "processWithdrawalRequest"
+            ],
+            "data_source": "backend/data/payment_data.json"
+        },
+        "Escrow": {
+            "service": "backend/src/payment/payment.service.ts",
+            "key_functions": [
+                "lockFunds",
+                "distributeEscrow",
+                "releaseEscrow",
+                "getLockedBalance"
+            ]
+        },
+        "Security": {
+            "service": "backend/src/security/security.service.ts",
+            "module": "backend/src/security/security.module.ts",
+            "key_features": [
+                "End-to-End Encryption (encrypt/decrypt)",
+                "Blockchain Transaction Hashing (generateTransactionHash)",
+                "MFA (generateMFASecret)",
+                "IP Rate Limiting (checkIpRateLimit)",
+                "Cold Storage Sweep"
+            ]
+        }
+    },
+    "architecture_style": "NestJS Monolith with JSON-based persistence (Mock DB)"
+}

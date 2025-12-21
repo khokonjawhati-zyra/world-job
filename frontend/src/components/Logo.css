@@ -1,0 +1,51 @@
+.main-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    margin: 0;
+    /* Reset default margin */
+    display: inline-block;
+}
+
+.rainbow-text {
+    /* Animated Rainbow Gradient */
+    background: linear-gradient(90deg,
+            #ff0000,
+            #ff7f00,
+            #ffff00,
+            #00ff00,
+            #0000ff,
+            #4b0082,
+            #9400d3,
+            #ff0000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-flow 3s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+@keyframes rainbow-flow {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.earth {
+    display: inline-block;
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));
+    animation: earth-rotate 20s linear infinite;
+    -webkit-text-fill-color: initial;
+}
+
+@keyframes earth-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

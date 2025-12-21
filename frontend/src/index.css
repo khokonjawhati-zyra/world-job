@@ -1,0 +1,120 @@
+:root {
+  --bg-dark: #050505;
+  --bg-panel: #0a0a0a;
+  /* Dark Vibrant Multi-Color Background */
+  --bg-card: linear-gradient(135deg, rgba(88, 0, 88, 0.85), rgba(0, 0, 100, 0.85), rgba(0, 88, 88, 0.85), rgba(88, 0, 0, 0.85));
+
+  --neon-pink: #ff00ff;
+  --neon-purple: #9d00ff;
+  --neon-cyan: #00e5ff;
+  --neon-lime: #ccff00;
+
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
+
+  --text-main: #ffffff;
+  --text-muted: #888888;
+
+  --font-family: 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  /* subtle gradient background */
+  background: radial-gradient(circle at 15% 50%, rgba(157, 0, 255, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.05), transparent 25%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--neon-pink);
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-neon {
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+}
+
+.btn-neon:hover {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+  border: none;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

@@ -1,0 +1,11 @@
+0000000000000000000000000000000000000000 c0e95c4c7fa29c4ad9a6089295710742e9f0d284 JYRALIVE <khokonjawhati@gmail.com> 1766168468 +0600	commit (initial): uploading my files
+c0e95c4c7fa29c4ad9a6089295710742e9f0d284 88b74d1d36ede04a52565df03367c7601a59a90c JYRALIVE <khokonjawhati@gmail.com> 1766172569 +0600	commit: Auto-fix routing and dashboard access
+88b74d1d36ede04a52565df03367c7601a59a90c 88b74d1d36ede04a52565df03367c7601a59a90c JYRALIVE <khokonjawhati@gmail.com> 1766172597 +0600	Branch: renamed refs/heads/main to refs/heads/main
+88b74d1d36ede04a52565df03367c7601a59a90c 01b092c1815c66e6ff478f82ba7ec45a85a9563d JYRALIVE <khokonjawhati@gmail.com> 1766173279 +0600	commit: Fix: Allow admin username login and seed admin user
+01b092c1815c66e6ff478f82ba7ec45a85a9563d f4a0fb0bdb8055e0186cc0ca24b5d8120ab8e489 JYRALIVE <khokonjawhati@gmail.com> 1766173696 +0600	commit: Fix: Configure API URL for prod and add backend vercel config
+f4a0fb0bdb8055e0186cc0ca24b5d8120ab8e489 0770fd44168b5a7459ff4379b2b09bb29f73ab6e JYRALIVE <khokonjawhati@gmail.com> 1766174766 +0600	commit: Fix: Link Frontend to successfully deployed Backend URL
+0770fd44168b5a7459ff4379b2b09bb29f73ab6e d6e2fdaf7afdb62660b408673504f3f26d40d8e9 JYRALIVE <khokonjawhati@gmail.com> 1766176441 +0600	commit: Fix: SPA Routing and Admin Access
+d6e2fdaf7afdb62660b408673504f3f26d40d8e9 6a58e840c944e3ae92d5d94f1c5c5caa9218cbe0 JYRALIVE <khokonjawhati@gmail.com> 1766176910 +0600	commit: Force Rebuild: Patch Routing Rules
+6a58e840c944e3ae92d5d94f1c5c5caa9218cbe0 7174d2394fef73f8f838dc5ef84a437c623473ea JYRALIVE <khokonjawhati@gmail.com> 1766177526 +0600	commit: Fix: Redirect admin access to dedicated Admin Login Page
+7174d2394fef73f8f838dc5ef84a437c623473ea 25cb549972798574bea72525933636dd2faab4ec JYRALIVE <khokonjawhati@gmail.com> 1766211738 +0600	commit: Update CORS for decoupled admin
+25cb549972798574bea72525933636dd2faab4ec aa53ea387f66fd941a76f3aeff991849ca8bf042 JYRALIVE <khokonjawhati@gmail.com> 1766212143 +0600	commit: Add world-job-admin-portal to CORS

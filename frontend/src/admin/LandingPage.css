@@ -1,0 +1,339 @@
+.landing-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.bg-glow {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.glow-top {
+    top: -20vh;
+    left: -20vw;
+    background: var(--neon-purple);
+}
+
+.glow-bottom {
+    bottom: -20vh;
+    right: -20vw;
+    background: var(--neon-cyan);
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 1rem;
+    z-index: 10;
+}
+
+.main-logo {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.rainbow-text {
+    /* Animated Rainbow Gradient */
+    background: linear-gradient(90deg,
+            #ff0000,
+            #ff7f00,
+            #ffff00,
+            #00ff00,
+            #0000ff,
+            #4b0082,
+            #9400d3,
+            #ff0000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-flow 3s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+@keyframes rainbow-flow {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.earth {
+    display: inline-block;
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));
+    animation: earth-rotate 20s linear infinite;
+    -webkit-text-fill-color: initial;
+}
+
+@keyframes earth-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.slogan {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
+    /* Animated Rainbow Gradient (Matching Logo) */
+    background: linear-gradient(90deg,
+            #ff0000,
+            #ff7f00,
+            #ffff00,
+            #00ff00,
+            #0000ff,
+            #4b0082,
+            #9400d3,
+            #ff0000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-flow 3s linear infinite;
+
+    display: table;
+    /* Ensures margin: auto works for centering if needed */
+    margin: 0 auto;
+    /* Explicit horizontal centering */
+}
+
+.role-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    z-index: 10;
+}
+
+.role-card {
+    width: 300px;
+    height: 380px;
+    background: var(--bg-card);
+    /* Semi-transparent background */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Remove default border */
+    border: none;
+    /* Create a stacking context */
+    z-index: 1;
+}
+
+/* Rainbow Border using ::before pseudo-element */
+/* Base pseudo-element setup */
+.role-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    /* Width of the border */
+    background-size: 400% 400%;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rainbow-border-flow 4s linear infinite;
+    pointer-events: none;
+}
+
+/* Worker Card Gradient (Cool Tones) */
+/* Worker Card: Cool Spectrum + Ambient Glow */
+.worker-card {
+    box-shadow: 0 10px 40px -10px rgba(0, 229, 255, 0.3);
+}
+
+.worker-card::before {
+    background-image: linear-gradient(135deg,
+            #00FFCC,
+            /* Teal */
+            #00CCFF,
+            /* Cyan */
+            #0066FF,
+            /* Blue */
+            #9933FF,
+            /* Purple */
+            #FF00CC,
+            /* Magenta */
+            #00FFCC);
+}
+
+/* Employer Card: Warm Spectrum + Ambient Glow */
+.employer-card {
+    box-shadow: 0 10px 40px -10px rgba(255, 0, 100, 0.3);
+}
+
+.employer-card::before {
+    background-image: linear-gradient(135deg,
+            #FFFF00,
+            /* Yellow */
+            #FF6600,
+            /* Orange */
+            #FF0000,
+            /* Red */
+            #FF0099,
+            /* Pink */
+            #CC00FF,
+            /* Violet */
+            #FFFF00);
+}
+
+.role-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+@keyframes rainbow-border-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.worker-card:hover {
+    box-shadow: 0 20px 50px rgba(255, 0, 255, 0.15);
+}
+
+.employer-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 229, 255, 0.15);
+}
+
+.card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.role-card h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    transition: color 0.3s;
+}
+
+.worker-card:hover h2 {
+    color: var(--neon-pink);
+}
+
+.employer-card:hover h2 {
+    color: var(--neon-cyan);
+}
+
+.role-card p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.worker-card:hover p,
+.employer-card:hover p {
+    color: var(--text-main);
+}
+
+.arrow {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s;
+}
+
+.worker-card .arrow {
+    color: var(--neon-pink);
+}
+
+.employer-card .arrow {
+    color: var(--neon-cyan);
+}
+
+.role-card:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-link {
+    position: absolute;
+    bottom: 30px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.footer-link:hover {
+    opacity: 1;
+}
+
+/* Investor Card: Wealth & Growth Spectrum */
+.investor-card {
+    box-shadow: 0 10px 40px -10px rgba(255, 215, 0, 0.3);
+}
+
+.investor-card::before {
+    background-image: linear-gradient(135deg,
+            #FFD700,
+            /* Gold */
+            #FFA500,
+            /* Orange */
+            #00FF00,
+            /* Lime */
+            #008000,
+            /* Green */
+            #006400,
+            /* Dark Green */
+            #FFD700);
+}
+
+.investor-card:hover {
+    box-shadow: 0 20px 50px rgba(255, 215, 0, 0.2);
+}
+
+.investor-card:hover h2 {
+    color: #FFD700;
+}
+
+.investor-card .arrow {
+    color: #FFD700;
+}
+
+.investor-card:hover p {
+    color: var(--text-main);
+}

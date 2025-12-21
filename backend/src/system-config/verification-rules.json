@@ -1,0 +1,20 @@
+{
+    "rules": [
+        {
+            "id": "NO_NAME_COLLISION",
+            "description": "New functions must not have same name as existing class methods."
+        },
+        {
+            "id": "PRESERVE_LEDGER_INTEGRITY",
+            "description": "No updates should alter the 'recordTransaction' logic or the hashing algorithm in 'SecurityService'."
+        },
+        {
+            "id": "SCHEMA_COMPATIBILITY",
+            "description": "New fields added to JSON persistence must have default values to avoid breaking legacy data loading."
+        },
+        {
+            "id": "NO_GLOBAL_VAR_POLLUTION",
+            "description": "Avoid adding global variables in services; use class properties."
+        }
+    ]
+}

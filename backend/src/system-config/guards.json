@@ -1,0 +1,19 @@
+{
+    "policy_name": "Read-Only Guards",
+    "description": "Files marked here should NOT be edited during routine updates, especially 'Notification System' updates, to prevent regression.",
+    "protected_files": [
+        {
+            "path": "backend/src/payment/payment.service.ts",
+            "reason": "Core financial ledger logic. Modification risks fund loss."
+        },
+        {
+            "path": "backend/src/security/security.service.ts",
+            "reason": "Core security primitives (Encryption, Hashing). Modification risks data compromise."
+        },
+        {
+            "path": "backend/src/payment/payment.module.ts",
+            "reason": "Dependency wiring for payments."
+        }
+    ],
+    "update_protocol": "Requires manual override or explicit 'FORCE' flag in MCP instructions."
+}

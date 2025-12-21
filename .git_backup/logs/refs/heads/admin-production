@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 25cb549972798574bea72525933636dd2faab4ec JYRALIVE <khokonjawhati@gmail.com> 1766211746 +0600	branch: Created from HEAD
+25cb549972798574bea72525933636dd2faab4ec 0238acc52c49c6a2be4fb37e44d07690debba2e3 JYRALIVE <khokonjawhati@gmail.com> 1766211860 +0600	commit: Isolate Admin Panel in admin-production branch
+0238acc52c49c6a2be4fb37e44d07690debba2e3 12238df896ef2fd7f9f77dc47e665552424c897e JYRALIVE <khokonjawhati@gmail.com> 1766211886 +0600	commit: Update AdminLoginPage to use backend auth with credential linking
+12238df896ef2fd7f9f77dc47e665552424c897e 14977b53d451fb5125cfc2ab128a9478ea4dfff5 JYRALIVE <khokonjawhati@gmail.com> 1766212656 +0600	commit: Fix AdminLoginPage API URL
