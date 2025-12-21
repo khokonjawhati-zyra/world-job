@@ -62,7 +62,7 @@ export class AuthService {
     }).catch(e => console.log('Admin seed error:', e.message)); // Catch if already exists
   }
 
-  async validateUser(email: string, pass: string): Promise<any> {
+  async validateUser(email: string, pass: string, userRole?: string): Promise<any> {
     const user = this.users.get(email);
     if (user && (await bcrypt.compare(pass, user.passwordHash))) {
       const { passwordHash, ...result } = user;
@@ -73,13 +73,15 @@ export class AuthService {
     // If user not found, create a temporary one so 'Login' works on any device 
     // even if the backend restarted or the user registered on another instance.
     if (!user) {
-      // Simple logic: If email looks valid, allow it.
-      // We assume the user 'Registered' on another device and the data was lost (in-memory).
-      // defaulting to WORKER role unless 'admin'/'employer' in email
-      let role = 'WORKER';
-      if (email.includes('admin')) role = 'ADMIN';
-      else if (email.includes('employer') || email.includes('buyer')) role = 'EMPLOYER';
-      else if (email.includes('investor')) role = 'INVESTOR';
+      // Logic: Prefer explicit role (from login), otherwise infer from email, else default to WORKER
+      let role = userRole || 'WORKER';
+
+      // Fallback inference if no explicit role provided
+      if (!userRole) {
+        if (email.includes('admin')) role = 'ADMIN';
+        else if (email.includes('employer') || email.includes('buyer')) role = 'EMPLOYER';
+        else if (email.includes('investor')) role = 'INVESTOR';
+      }
 
       const hashedPassword = await bcrypt.hash(pass, 10);
       const newUser = {
