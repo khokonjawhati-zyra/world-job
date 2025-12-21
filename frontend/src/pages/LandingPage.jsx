@@ -233,8 +233,8 @@ const LandingPage = () => {
                         <h2>Worker</h2>
                         <p>Find Jobs & Projects</p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '20px', justifyContent: 'center', position: 'relative', zIndex: 9999 }}>
-                            <button onClick={() => navigate('/login', { state: { mode: 'login' } })} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
-                            <button onClick={() => navigate('/login', { state: { mode: 'signup', role: 'WORKER' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
+                            <button onClick={() => navigate('/worker')} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
+                            <button onClick={() => navigate('/auth', { state: { mode: 'signup', role: 'WORKER' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
                         </div>
                     </div>
                 </div>
@@ -244,8 +244,8 @@ const LandingPage = () => {
                         <h2>Employer</h2>
                         <p>Hire Top Talent</p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '20px', justifyContent: 'center', position: 'relative', zIndex: 9999 }}>
-                            <button onClick={() => navigate('/login', { state: { mode: 'login' } })} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
-                            <button onClick={() => navigate('/login', { state: { mode: 'signup', role: 'EMPLOYER' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
+                            <button onClick={() => navigate('/employer')} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
+                            <button onClick={() => navigate('/auth', { state: { mode: 'signup', role: 'EMPLOYER' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
                         </div>
                     </div>
                 </div>
@@ -255,8 +255,8 @@ const LandingPage = () => {
                         <h2>Investor</h2>
                         <p>Fund Projects & Earn</p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '20px', justifyContent: 'center', position: 'relative', zIndex: 9999 }}>
-                            <button onClick={() => navigate('/login', { state: { mode: 'login' } })} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
-                            <button onClick={() => navigate('/login', { state: { mode: 'signup', role: 'INVESTOR' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
+                            <button onClick={() => navigate('/investor')} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid #fff', color: '#fff', padding: '8px 20px', borderRadius: '20px', cursor: 'pointer', pointerEvents: 'auto' }}>Login</button>
+                            <button onClick={() => navigate('/auth', { state: { mode: 'signup', role: 'INVESTOR' } })} className="btn-neon" style={{ padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', cursor: 'pointer', pointerEvents: 'auto' }}>Join</button>
                         </div>
                     </div>
                 </div>
