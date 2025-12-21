@@ -27,7 +27,7 @@ const AuthPage = () => {
         if (isForgot) {
             body = { email: formData.email };
         } else if (isLogin) {
-            body = { email: formData.email, password: formData.password };
+            body = { email: formData.email, password: formData.password, role }; // Pass role for Demo Auto-Create
         } else {
             body = {
                 ...formData,
@@ -95,7 +95,7 @@ const AuthPage = () => {
                     {isForgot ? 'Reset Password' : (isLogin ? 'Secure Login' : 'Join the Future')}
                 </h3>
 
-                {!isLogin && !isForgot && (
+                {!isForgot && (
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
                         {['WORKER', 'EMPLOYER', 'INVESTOR'].map(r => (
                             <button
