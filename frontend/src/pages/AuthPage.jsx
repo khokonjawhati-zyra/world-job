@@ -9,6 +9,7 @@ const AuthPage = () => {
     const queryParams = new URLSearchParams(location.search);
     const initialRole = location.state?.role || queryParams.get('role') || localStorage.getItem('role_signup') || 'WORKER';
     const [isLogin, setIsLogin] = useState(location.state?.mode !== 'signup' && queryParams.get('mode') !== 'signup');
+    const [isForgot, setIsForgot] = useState(false);
     const [role, setRole] = useState(initialRole); // WORKER, EMPLOYER, INVESTOR
     const [formData, setFormData] = useState({ email: '', password: '', fullName: '', agreedToTerms: false });
     const [loading, setLoading] = useState(false);
@@ -18,14 +19,22 @@ const AuthPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        const endpoint = isLogin ? `${API_BASE_URL}/auth/login` : `${API_BASE_URL}/auth/register`;
-        const body = isLogin
-            ? { email: formData.email, password: formData.password }
-            : {
+        const endpoint = isForgot
+            ? `${API_BASE_URL}/auth/forgot-password`
+            : (isLogin ? `${API_BASE_URL}/auth/login` : `${API_BASE_URL}/auth/register`);
+
+        let body;
+        if (isForgot) {
+            body = { email: formData.email };
+        } else if (isLogin) {
+            body = { email: formData.email, password: formData.password };
+        } else {
+            body = {
                 ...formData,
                 role,
                 agreedToTermsAt: new Date().toISOString()
             };
+        }
 
         try {
             console.log("Attempting auth to:", endpoint);
@@ -46,6 +55,11 @@ const AuthPage = () => {
             setLoading(false);
 
             if (res.ok) {
+                if (isForgot) {
+                    alert(data.message || 'Reset link sent!');
+                    setIsForgot(false);
+                    return;
+                }
                 localStorage.setItem('token', data.access_token);
                 localStorage.setItem('user', JSON.stringify(data.user));
                 if (data.user.role === 'ADMIN') navigate('/admin');
@@ -108,10 +122,10 @@ const AuthPage = () => {
                     W🌎RLD J🌎B
                 </h1>
                 <h3 style={{ textAlign: 'center', color: '#fff', marginBottom: '30px' }}>
-                    {isLogin ? 'Secure Login' : 'Join the Future'}
+                    {isForgot ? 'Reset Password' : (isLogin ? 'Secure Login' : 'Join the Future')}
                 </h3>
 
-                {!isLogin && (
+                {!isLogin && !isForgot && (
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
                         {['WORKER', 'EMPLOYER', 'INVESTOR'].map(r => (
                             <button
@@ -134,7 +148,7 @@ const AuthPage = () => {
                 )}
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                    {!isLogin && (
+                    {!isLogin && !isForgot && (
                         <input
                             type="text"
                             placeholder="Full Name"
@@ -152,14 +166,16 @@ const AuthPage = () => {
                         style={{ padding: '12px', borderRadius: '8px', border: '1px solid #333', background: 'rgba(0,0,0,0.5)', color: '#fff' }}
                         required
                     />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={formData.password}
-                        onChange={e => setFormData({ ...formData, password: e.target.value })}
-                        style={{ padding: '12px', borderRadius: '8px', border: '1px solid #333', background: 'rgba(0,0,0,0.5)', color: '#fff' }}
-                        required
-                    />
+                    {!isForgot && (
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            value={formData.password}
+                            onChange={e => setFormData({ ...formData, password: e.target.value })}
+                            style={{ padding: '12px', borderRadius: '8px', border: '1px solid #333', background: 'rgba(0,0,0,0.5)', color: '#fff' }}
+                            required
+                        />
+                    )}
                     {!isLogin && (
                         <input
                             type="text"
@@ -170,12 +186,14 @@ const AuthPage = () => {
                         />
                     )}
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', color: '#888' }}>
-                        <label>
-                            <input type="checkbox" /> Remember Me
-                        </label>
-                        {isLogin && <span style={{ cursor: 'pointer', color: 'var(--neon-magenta)' }}>Forgot Password?</span>}
-                    </div>
+                    {!isForgot && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', color: '#888' }}>
+                            <label>
+                                <input type="checkbox" /> Remember Me
+                            </label>
+                            {isLogin && <span onClick={() => setIsForgot(true)} style={{ cursor: 'pointer', color: 'var(--neon-magenta)' }}>Forgot Password?</span>}
+                        </div>
+                    )}
 
                     {!isLogin && (
                         <div style={{ fontSize: '0.8rem', color: '#ccc' }}>
@@ -196,18 +214,26 @@ const AuthPage = () => {
                     )}
 
                     <button type="submit" className="btn-neon" disabled={loading} style={{ width: '100%', marginTop: '10px' }}>
-                        {loading ? 'Processing...' : (isLogin ? 'Login' : 'Create Account')}
+                        {loading ? 'Processing...' : (isForgot ? 'Send Reset Link' : (isLogin ? 'Login' : 'Create Account'))}
                     </button>
                 </form>
 
                 <div style={{ marginTop: '20px', textAlign: 'center', fontSize: '0.9rem', color: '#888' }}>
-                    {isLogin ? "Don't have an account? " : "Already have an account? "}
-                    <span
-                        onClick={() => setIsLogin(!isLogin)}
-                        style={{ color: 'var(--neon-cyan)', cursor: 'pointer', fontWeight: 'bold' }}
-                    >
-                        {isLogin ? 'Sign Up' : 'Login'}
-                    </span>
+                    {isForgot ? (
+                        <span onClick={() => setIsForgot(false)} style={{ color: 'var(--neon-cyan)', cursor: 'pointer', fontWeight: 'bold' }}>
+                            ← Back to Login
+                        </span>
+                    ) : (
+                        <>
+                            {isLogin ? "Don't have an account? " : "Already have an account? "}
+                            <span
+                                onClick={() => setIsLogin(!isLogin)}
+                                style={{ color: 'var(--neon-cyan)', cursor: 'pointer', fontWeight: 'bold' }}
+                            >
+                                {isLogin ? 'Sign Up' : 'Login'}
+                            </span>
+                        </>
+                    )}
                 </div>
 
                 <div style={{ marginTop: '30px', borderTop: '1px solid #333', paddingTop: '20px' }}>

@@ -175,4 +175,15 @@ export class AuthService {
     user.status = 'BANNED';
     return { success: true };
   }
+
+  async forgotPassword(email: string) {
+    const user = this.users.get(email);
+    if (!user) {
+      // Return success even if user not found for security
+      return { success: true, message: 'If account exists, reset link sent.' };
+    }
+    // Logic to send email would go here
+    console.log(`[MOCK EMAIL] Password reset link sent to ${email}`);
+    return { success: true, message: 'Reset link sent to your email.' };
+  }
 }

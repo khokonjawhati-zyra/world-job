@@ -46,7 +46,11 @@ export class AuthController {
   }
 
   @Post('admin/users/:userId/ban')
-  banUser(@Param('userId') userId: string) {
     return this.authService.banUser(userId);
   }
+
+@Post('forgot-password')
+async forgotPassword(@Body('email') email: string) {
+  return this.authService.forgotPassword(email);
+}
 }
