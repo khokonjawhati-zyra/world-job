@@ -63,9 +63,9 @@ const AuthPage = () => {
                 localStorage.setItem('token', data.access_token);
                 localStorage.setItem('user', JSON.stringify(data.user));
                 if (data.user.role === 'ADMIN') navigate('/admin');
-                else if (data.user.role === 'WORKER') navigate('/worker');
-                else if (data.user.role === 'EMPLOYER') navigate('/employer');
-                else if (data.user.role === 'INVESTOR') navigate('/investor');
+                else if (data.user.role === 'WORKER') navigate('/worker-dashboard');
+                else if (data.user.role === 'EMPLOYER' || data.user.role === 'BUYER') navigate('/buyer-dashboard');
+                else if (data.user.role === 'INVESTOR') navigate('/investor-dashboard');
                 else navigate('/');
             } else {
                 console.error("Auth Fail:", data);
