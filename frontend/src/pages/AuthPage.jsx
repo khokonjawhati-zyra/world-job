@@ -68,7 +68,9 @@ const AuthPage = () => {
                 else if (data.user.role === 'INVESTOR') navigate('/investor');
                 else navigate('/');
             } else {
-                alert(data.message || `Auth failed: ${res.status}`);
+                // If backend returns a message object, use it. Otherwise status text.
+                const userMsg = data.message || data.error || `Error ${res.status}: ${res.statusText}`;
+                alert(userMsg);
             }
         } catch (err) {
             console.warn("Backend Unreachable, Switching to Demo Mode:", err);
