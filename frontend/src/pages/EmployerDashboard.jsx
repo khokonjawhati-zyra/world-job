@@ -542,7 +542,7 @@ const EmployerDashboard = () => {
                     <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                             <Logo size="2.5rem" />
-                            <span className="text-gradient" style={{ fontSize: '1.5rem', borderLeft: '1px solid #333', paddingLeft: '20px', '--neon-pink': 'var(--neon-cyan)', '--neon-purple': 'var(--neon-lime)' }}>Employer Panel</span>
+                            <span className="text-gradient" style={{ fontSize: '1.5rem', borderLeft: '1px solid #333', paddingLeft: '20px', '--neon-pink': 'var(--neon-cyan)', '--neon-purple': 'var(--neon-lime)' }}>Employer / Buyer Panel</span>
                             {isVerified && <span style={{ marginLeft: '15px', fontSize: '0.8rem', background: 'rgba(0,255,0,0.1)', border: '1px solid var(--neon-lime)', color: 'var(--neon-lime)', padding: '4px 10px', borderRadius: '20px' }}>🛡️ VERIFIED</span>}
                         </div>
                         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
