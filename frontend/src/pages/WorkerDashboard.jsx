@@ -11,7 +11,7 @@ import FinancialsPanel from '../components/FinancialsPanel';
 import DailyLaborMarketplace from '../components/DailyLaborMarketplace';
 import { CareerLadder, SkillEndorsements } from '../components/CareerComponents';
 import { CommunityGroupsPanel, MentorshipPanel } from '../components/CommunityComponents';
-import { AdWidget, SubscriptionPlans } from '../components/MonetizationComponents';
+// import { AdWidget, SubscriptionPlans } from '../components/MonetizationComponents';
 import ReferralDashboard from '../components/ReferralDashboard';
 import WorkerWorkPermitPanel from '../components/WorkerWorkPermitPanel';
 import WorkerEmergencyPanel from '../components/WorkerEmergencyPanel';
@@ -24,6 +24,27 @@ import { NotificationProvider } from '../context/NotificationContext';
 import NotificationBanner from '../components/NotificationBanner';
 import NotificationBell from '../components/NotificationBell';
 
+
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+    }
+    static getDerivedStateFromError(error) { return { hasError: true, error }; }
+    componentDidCatch(error, errorInfo) { console.error("Uncaught error:", error, errorInfo); }
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div style={{ padding: '20px', color: 'red', textAlign: 'center', marginTop: '50px' }}>
+                    <h1>⚠️ Something went wrong in Worker Dashboard.</h1>
+                    <p>{this.state.error && this.state.error.toString()}</p>
+                    <button onClick={() => window.location.reload()} style={{ padding: '10px 20px', cursor: 'pointer' }}>Reload Page</button>
+                </div>
+            );
+        }
+        return this.props.children;
+    }
+}
 
 const WorkerDashboard = () => {
     const [showReview, setShowReview] = React.useState(null);
@@ -528,215 +549,215 @@ const WorkerDashboard = () => {
     };
 
     return (
-        <NotificationProvider userId="101" role="worker">
-            <div className="container" style={{ paddingTop: '80px' }} >
-                <NotificationBanner />
-                <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                        <Logo size="2.5rem" />
-                        <span className="text-gradient" style={{ fontSize: '1.5rem', borderLeft: '1px solid #333', paddingLeft: '20px' }}>Worker Panel</span>
-                        {isVerified && (
-                            <span style={{
-                                marginLeft: '15px',
-                                fontSize: '0.8rem',
-                                background: 'rgba(0,255,0,0.1)',
-                                border: '1px solid var(--neon-lime)',
-                                color: 'var(--neon-lime)',
-                                padding: '4px 10px',
-                                borderRadius: '20px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '5px'
-                            }}>
-                                🛡️ VERIFIED
-                            </span>
-                        )}
-                    </div>
-                    <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-                        <div className="glass-panel" style={{ padding: '10px 20px', borderRadius: '50px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                            <span>Balance: ${walletBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
-                            <button
-                                onClick={fetchWalletBalance}
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    color: 'var(--neon-pink)',
-                                    cursor: 'pointer',
-                                    fontSize: '1.2rem',
-                                    transition: 'transform 0.5s ease',
-                                    transform: refreshing ? 'rotate(360deg)' : 'none'
-                                }}
-                                title="Refresh Balance"
-                            >
-                                ↻
-                            </button>
+        <ErrorBoundary>
+            <NotificationProvider userId="101" role="worker">
+                <div className="container" style={{ paddingTop: '80px' }} >
+                    <NotificationBanner />
+                    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                            <Logo size="2.5rem" />
+                            <span className="text-gradient" style={{ fontSize: '1.5rem', borderLeft: '1px solid #333', paddingLeft: '20px' }}>Worker Panel</span>
+                            {isVerified && (
+                                <span style={{
+                                    marginLeft: '15px',
+                                    fontSize: '0.8rem',
+                                    background: 'rgba(0,255,0,0.1)',
+                                    border: '1px solid var(--neon-lime)',
+                                    color: 'var(--neon-lime)',
+                                    padding: '4px 10px',
+                                    borderRadius: '20px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '5px'
+                                }}>
+                                    🛡️ VERIFIED
+                                </span>
+                            )}
                         </div>
-                        <div className="glass-panel" style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--neon-pink)' }}></div>
-                        <NotificationBell />
-                    </div>
-                </header>
-
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '30px' }}>
-                    <aside className="glass-panel" style={{ position: 'sticky', top: '20px', maxHeight: '90vh', overflowY: 'auto', borderRadius: '20px', padding: '20px' }}>
-                        <nav style={{ display: 'flex', flexDirection: 'column', gap: '15px', minHeight: '100%' }}>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('dashboard'); }}
-                                style={{ color: activeSection === 'dashboard' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Dashboard
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('find-jobs'); }}
-                                style={{ color: activeSection === 'find-jobs' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Find Jobs
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('my-jobs'); }}
-                                style={{ color: activeSection === 'my-jobs' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                My Jobs
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('work-permits'); }}
-                                style={{ color: activeSection === 'work-permits' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Work Permits (Active)
-                            </a>
-
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('earnings'); }}
-                                style={{ color: activeSection === 'earnings' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Earnings
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('investment'); }}
-                                style={{ color: activeSection === 'investment' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Investment Hub 🚀
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('verification'); }}
-                                style={{ color: activeSection === 'verification' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Get Verified {isVerified && '✅'}
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('digital-id'); }}
-                                style={{ color: activeSection === 'digital-id' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Global ID & Identity
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('daily-labor'); }}
-                                style={{ color: activeSection === 'daily-labor' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Daily Labor (Offline)
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('emergency'); }}
-                                style={{ color: activeSection === 'emergency' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                🚨 Emergency Response
-                            </a>
-                            <a
-                                href="#"
-
-                                onClick={(e) => { e.preventDefault(); setActiveSection('time-tracker'); }}
-                                style={{ color: activeSection === 'time-tracker' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Time Tracker
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('my-requests'); }}
-                                style={{ color: activeSection === 'my-requests' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                My Job Requests
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('career'); }}
-                                style={{ color: activeSection === 'career' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Skill Growth & Career
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('community'); }}
-                                style={{ color: activeSection === 'community' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Community & Mentorship
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('referral'); }}
-                                style={{ color: activeSection === 'referral' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                🎁 Refer & Earn
-                            </a>
-
-                            <div style={{ padding: '15px', marginTop: '10px', background: 'rgba(255,215,0,0.1)', borderRadius: '10px', border: '1px solid gold', textAlign: 'center' }}>
-                                <div style={{ color: 'gold', fontWeight: 'bold', marginBottom: '5px' }}>⚡ Go Pro</div>
-                                <p style={{ fontSize: '0.8rem', color: '#ccc', marginBottom: '10px' }}>Get more jobs & visibility</p>
-                                <button onClick={() => setShowUpgradeModal(true)} style={{ background: 'gold', color: '#000', border: 'none', padding: '5px 15px', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Upgrade</button>
+                        <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                            <div className="glass-panel" style={{ padding: '10px 20px', borderRadius: '50px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <span>Balance: ${walletBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+                                <button
+                                    onClick={fetchWalletBalance}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        color: 'var(--neon-pink)',
+                                        cursor: 'pointer',
+                                        fontSize: '1.2rem',
+                                        transition: 'transform 0.5s ease',
+                                        transform: refreshing ? 'rotate(360deg)' : 'none'
+                                    }}
+                                    title="Refresh Balance"
+                                >
+                                    ↻
+                                </button>
                             </div>
+                            <div className="glass-panel" style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--neon-pink)' }}></div>
+                            <NotificationBell />
+                        </div>
+                    </header>
 
-                            <Link to="/profile/worker/101" style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}>
-                                My Profile
-                            </Link>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setActiveSection('security'); }}
-                                style={{ color: activeSection === 'security' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                🛡️ Security Center
-                            </a>
-                            <a
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); setShowSupport(true); }}
-                                style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
-                            >
-                                Support
-                            </a>
-                            <Link to="/" style={{ marginTop: 'auto', color: 'var(--text-muted)', textDecoration: 'none' }}>Logout</Link>
-                        </nav>
-                        <AdWidget role="worker" />
-                    </aside>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '30px' }}>
+                        <aside className="glass-panel" style={{ position: 'sticky', top: '20px', maxHeight: '90vh', overflowY: 'auto', borderRadius: '20px', padding: '20px' }}>
+                            <nav style={{ display: 'flex', flexDirection: 'column', gap: '15px', minHeight: '100%' }}>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('dashboard'); }}
+                                    style={{ color: activeSection === 'dashboard' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Dashboard
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('find-jobs'); }}
+                                    style={{ color: activeSection === 'find-jobs' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Find Jobs
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('my-jobs'); }}
+                                    style={{ color: activeSection === 'my-jobs' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    My Jobs
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('work-permits'); }}
+                                    style={{ color: activeSection === 'work-permits' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Work Permits (Active)
+                                </a>
 
-                    <main style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                        {activeSection === 'security' ? <SecuritySettings userId="101" /> : renderContent()}
-                        <Footer />
-                    </main>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('earnings'); }}
+                                    style={{ color: activeSection === 'earnings' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Earnings
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('investment'); }}
+                                    style={{ color: activeSection === 'investment' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Investment Hub 🚀
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('verification'); }}
+                                    style={{ color: activeSection === 'verification' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Get Verified {isVerified && '✅'}
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('digital-id'); }}
+                                    style={{ color: activeSection === 'digital-id' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Global ID & Identity
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('daily-labor'); }}
+                                    style={{ color: activeSection === 'daily-labor' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Daily Labor (Offline)
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('emergency'); }}
+                                    style={{ color: activeSection === 'emergency' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    🚨 Emergency Response
+                                </a>
+                                <a
+                                    href="#"
+
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('time-tracker'); }}
+                                    style={{ color: activeSection === 'time-tracker' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Time Tracker
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('my-requests'); }}
+                                    style={{ color: activeSection === 'my-requests' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    My Job Requests
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('career'); }}
+                                    style={{ color: activeSection === 'career' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Skill Growth & Career
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('community'); }}
+                                    style={{ color: activeSection === 'community' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Community & Mentorship
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('referral'); }}
+                                    style={{ color: activeSection === 'referral' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    🎁 Refer & Earn
+                                </a>
+
+                                <div style={{ padding: '15px', marginTop: '10px', background: 'rgba(255,215,0,0.1)', borderRadius: '10px', border: '1px solid gold', textAlign: 'center' }}>
+                                    <div style={{ color: 'gold', fontWeight: 'bold', marginBottom: '5px' }}>⚡ Go Pro</div>
+                                    <p style={{ fontSize: '0.8rem', color: '#ccc', marginBottom: '10px' }}>Get more jobs & visibility</p>
+                                    <button onClick={() => setShowUpgradeModal(true)} style={{ background: 'gold', color: '#000', border: 'none', padding: '5px 15px', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold', width: '100%' }}>Upgrade</button>
+                                </div>
+
+                                <Link to="/profile/worker/101" style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}>
+                                    My Profile
+                                </Link>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setActiveSection('security'); }}
+                                    style={{ color: activeSection === 'security' ? 'var(--neon-pink)' : 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    🛡️ Security Center
+                                </a>
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); setShowSupport(true); }}
+                                    style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s' }}
+                                >
+                                    Support
+                                </a>
+                                <Link to="/" style={{ marginTop: 'auto', color: 'var(--text-muted)', textDecoration: 'none' }}>Logout</Link>
+                            </nav>
+                            {/* <AdWidget role="worker" /> */}
+                        </aside>
+
+                        <main style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                            {activeSection === 'security' ? <SecuritySettings userId="101" /> : renderContent()}
+                            <Footer />
+                        </main>
+                    </div>
+                    {showSupport && <SupportTicketForm onClose={() => setShowSupport(false)} />}
+                    {/* {showUpgradeModal && <SubscriptionPlans role="worker" onClose={() => setShowUpgradeModal(false)} onBalanceUpdate={fetchWalletBalance} />} */}
+                    <UniversalChat
+                        roomId={chatContext.roomId}
+                        userId="101"
+                        userName="Alice Dev"
+                        userRole="worker"
+                        title={chatContext.title}
+                    />
                 </div>
-                {showSupport && <SupportTicketForm onClose={() => setShowSupport(false)} />}
-                {showUpgradeModal && <SubscriptionPlans role="worker" onClose={() => setShowUpgradeModal(false)} onBalanceUpdate={fetchWalletBalance} />}
-                <UniversalChat
-                    roomId={chatContext.roomId}
-                    userId="101"
-                    userName="Alice Dev"
-                    userRole="worker"
-                    title={chatContext.title}
-                />
-            </div>
-        </NotificationProvider>
+            </NotificationProvider>
+        </ErrorBoundary>
     );
 };
 // Helper Component for Milestones
 const MilestoneList = ({ projectId }) => {
-    const [milestones, setMilestones] = React.useState([]);
-    const [loading, setLoading] = React.useState(true);
 
     const fetchMilestones = () => {
         // In a real app, you might fetch /projects/:id and extract milestones
